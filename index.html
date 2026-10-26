@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excellence Talk | Find Your Voice. Shape Your Future.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo-link">
+        <img src="assets/logo.png" alt="Excellence Talk - Find Your Voice. Shape Your Future." class="nav-logo-img">
+      </a>
+      
+      <div class="nav-links">
+        <a href="#how-we-help">How We Help Students Speak</a>
+        <a href="#achievements">Student Achievements</a>
+        <a href="#teachers">Teacher Guidance</a>
+        <a href="#method">The 4-Pillar Method</a>
+        <a href="#speaking-loop">Speaking Journey</a>
+        <a href="#curriculum">Grade-Wise Books</a>
+        <a href="#ai-coach">Try AI Speaking</a>
+        <a href="#institutions">For Schools & Colleges</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn btn-outline nav-btn-sample" onclick="openModal('sample-chapter')">Sample Book</button>
+        <button class="btn btn-primary nav-btn-demo" onclick="openModal('book-demo')">Book a Demo</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer & Backdrop -->
+  <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo.png" alt="Excellence Talk" class="mobile-drawer-logo">
+      <button class="mobile-drawer-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#how-we-help" onclick="toggleMobileMenu()">🗣️ How We Help Students Speak</a>
+      <a href="#achievements" onclick="toggleMobileMenu()">🏆 Student Achievements</a>
+      <a href="#teachers" onclick="toggleMobileMenu()">👩‍🏫 Teacher Guidance</a>
+      <a href="#method" onclick="toggleMobileMenu()">🏛️ The 4-Pillar Method</a>
+      <a href="#speaking-loop" onclick="toggleMobileMenu()">🔁 The 6-Step Speaking Journey</a>
+      <a href="#curriculum" onclick="toggleMobileMenu()">📚 Grade-Wise Books</a>
+      <a href="#ai-coach" onclick="toggleMobileMenu()">🤖 Try AI Speaking</a>
+      <a href="#institutions" onclick="toggleMobileMenu()">🏫 For Schools & Colleges</a>
+    </div>
+    <div class="mobile-drawer-actions">
+      <button class="btn btn-outline btn-block" onclick="toggleMobileMenu(); openModal('sample-chapter')">Download Sample Book PDF</button>
+      <button class="btn btn-primary btn-block" onclick="toggleMobileMenu(); openModal('book-demo')">Schedule Institutional Demo</button>
+    </div>
+  </div>
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-tagline-badge">
+        <span class="pulse-dot"></span>
+        <span>AI-POWERED ENGLISH LEARNING • GRADE 1 TO COLLEGE</span>
+      </div>
+
+      <h1 class="hero-title">
+        We Don't Just Teach English.<br>
+        <span class="gradient-text">We Make Students Speak.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Most students understand English grammar, but <strong>freeze when asked to speak</strong>. 
+        Excellence Talk breaks the barrier of hesitation and stage fear through a proven system: 
+        <strong>tangible grade-wise books</strong>, <strong>daily 1-on-1 AI voice practice</strong>, 
+        <strong>interactive classroom speaking games</strong>, and <strong>live trainer masterclasses</strong>.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#how-we-help" class="btn btn-primary btn-lg">See How We Help Students Speak</a>
+        <a href="#achievements" class="btn btn-secondary btn-lg">Explore Student Achievements</a>
+      </div>
+
+      <!-- Trust & Impact Proof Bar -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">94%</div>
+          <div class="stat-label">Overcome Stage Fear & Hesitation</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">100,000+</div>
+          <div class="stat-label">AI Voice Practice Sessions Completed</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">3.8x</div>
+          <div class="stat-label">Faster Vocabulary & Sentence Spontaneity</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">Grade 1 – College</div>
+          <div class="stat-label">Complete Speaking Fluency Pathway</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HOW WE HELP STUDENTS SPEAK -->
+  <section id="how-we-help" class="section how-it-works-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">The Fluency Solution</div>
+        <h2>Why Students Struggle to Speak — And How We Solve It</h2>
+        <p class="section-desc">
+          In typical classrooms, 40+ students compete for 2 minutes of speaking time, leaving the quiet ones silent. 
+          Here is how Excellence Talk transforms hesitation into fearless, natural communication.
+        </p>
+      </div>
+
+      <div class="transformation-grid">
+        <!-- Feature 1 -->
+        <div class="trans-card">
+          <div class="trans-icon-box">🛡️</div>
+          <div class="trans-step-tag">Step 1 • Overcoming Shyness</div>
+          <h3>A Safe, Judgment-Free Zone to Talk</h3>
+          <p>
+            The #1 enemy of spoken English is the fear of being mocked. With our AI Speaking Coach, 
+            students practice speaking in private. They make mistakes, hear gentle feedback, and repeat without embarrassment until confidence is second nature.
+          </p>
+          <div class="trans-metric">
+            <strong>Result:</strong> 92% of shy students start volunteering to speak in class within 4 weeks.
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="trans-card">
+          <div class="trans-icon-box">🧠</div>
+          <div class="trans-step-tag">Step 2 • Stopping Mental Translation</div>
+          <h3>Thinking Directly in English</h3>
+          <p>
+            Students often translate from their mother tongue before speaking, causing pauses and stuttering. 
+            Our grade-wise books provide real sentence patterns and situational frames that train the brain to speak in complete thoughts instantly.
+          </p>
+          <div class="trans-metric">
+            <strong>Result:</strong> 65% reduction in filler words ("um", "ah") and awkward pauses.
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="trans-card">
+          <div class="trans-icon-box">🎯</div>
+          <div class="trans-step-tag">Step 3 • Instant Speech Diagnostics</div>
+          <h3>Instant Feedback on Pronunciation & Clarity</h3>
+          <p>
+            Every time a student speaks, the speech engine analyzes pronunciation, grammar, vocabulary range, and rhythm. 
+            Students see exact color-coded syllables to improve, guiding them towards clear, internationally intelligible speech.
+          </p>
+          <div class="trans-metric">
+            <strong>Result:</strong> Immediate phonetic improvement and natural voice modulation.
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="trans-card">
+          <div class="trans-icon-box">🎙️</div>
+          <div class="trans-step-tag">Step 4 • Real-World Stage Readiness</div>
+          <h3>Public Speaking, Debates & Group Discussions</h3>
+          <p>
+            After drilling with the book and AI, students take the floor in live trainer masterclasses. 
+            They present storytelling, participate in British Parliamentary debates, or lead college corporate group discussions.
+          </p>
+          <div class="trans-metric">
+            <strong>Result:</strong> Students speak with poise on real stages, assemblies, and job interviews.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: STUDENT ACHIEVEMENTS & TRANSFORMATION STORIES -->
+  <section id="achievements" class="section achievements-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Verified Milestones</div>
+        <h2>Student Achievements & Real Transformations</h2>
+        <p class="section-desc">
+          From shy back-benchers to school debate champions and campus placement toppers—hear the difference 
+          daily speaking practice makes.
+        </p>
+      </div>
+
+      <!-- Testimonial / Story Cards Grid -->
+      <div class="stories-grid">
+        <!-- Story 1 -->
+        <div class="story-card">
+          <div class="story-header">
+            <div class="student-avatar" style="background:#3B82F6;">AN</div>
+            <div>
+              <div class="student-name">Ananya Sharma</div>
+              <div class="student-meta">Grade 5 • Delhi Public School, Bengaluru</div>
+            </div>
+            <span class="achievement-pill">🏆 Assembly Speaker</span>
+          </div>
+          <div class="story-quote">
+            "I used to get terrified whenever the English teacher asked me to stand up and read. With the Excellence Talk Grade 5 book and the AI speaking app, I practiced 'Daily Routines' and 'My Dream Trip' every evening. Last month, <strong>I was chosen to give the welcome speech at our annual school exhibition in front of 600 parents!</strong>"
+          </div>
+          <div class="story-footer">
+            <div class="metric-badge">Speaking Fluency: <strong>+42% in 90 Days</strong></div>
+            <div class="metric-badge">CEFR Level: <strong>A1 ➔ A2+</strong></div>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story-card">
+          <div class="story-header">
+            <div class="student-avatar" style="background:#10B981;">RK</div>
+            <div>
+              <div class="student-name">Rohan Kulkarni</div>
+              <div class="student-meta">Grade 8 • St. Xavier's High School, Pune</div>
+            </div>
+            <span class="achievement-pill">🥇 Debate Champion</span>
+          </div>
+          <div class="story-quote">
+            "I always scored 90+ in written English exams, but I could never speak fluently during debates. Classroom Mode on our smart TV made sentence relays super competitive, and the AI coach challenged my arguments with counter-points. <strong>I won 1st Place in our Inter-School British Parliamentary Debate this term!</strong>"
+          </div>
+          <div class="story-footer">
+            <div class="metric-badge">Debate & Argument Poise: <strong>Top 1%</strong></div>
+            <div class="metric-badge">Vocabulary Mastery: <strong>B2 Level</strong></div>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story-card">
+          <div class="story-header">
+            <div class="student-avatar" style="background:#8B5CF6;">PV</div>
+            <div>
+              <div class="student-name">Pooja Varma</div>
+              <div class="student-meta">Final Year B.Tech • Global Engineering College, Hyderabad</div>
+            </div>
+            <span class="achievement-pill">💼 Campus Placement</span>
+          </div>
+          <div class="story-quote">
+            "Campus placements were coming up, and Group Discussions (GD) were my biggest nightmare. The <em>Professional English & Employability Workbook</em> taught us how to initiate a GD, present data, and handle counter-arguments professionally. <strong>I cleared both the GD and HR rounds on Day 1 to land an offer at a Tier-1 tech multinational!</strong>"
+          </div>
+          <div class="story-footer">
+            <div class="metric-badge">Interview Readiness Score: <strong>96/100</strong></div>
+            <div class="metric-badge">Placement Offer: <strong>Cracked Day 1</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institutional Achievement Highlights -->
+      <div class="institutional-achievements-banner">
+        <div class="inst-stat">
+          <div class="inst-num">85+</div>
+          <div class="inst-text">Partner Schools & Colleges where 100% of students actively speak English daily</div>
+        </div>
+        <div class="inst-divider"></div>
+        <div class="inst-stat">
+          <div class="inst-num">98.4%</div>
+          <div class="inst-text">Teachers report higher classroom participation and dramatic reduction in hesitation</div>
+        </div>
+        <div class="inst-divider"></div>
+        <div class="inst-stat">
+          <div class="inst-num">100%</div>
+          <div class="inst-text">Books delivered directly to campuses with synchronized digital curricula</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: TEACHER GUIDANCE & EMPOWERMENT -->
+  <section id="teachers" class="section teachers-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Teacher Empowerment</div>
+        <h2>Complete Guidance & Training for School Teachers</h2>
+        <p class="section-desc">
+          Teachers are the champions who inspire students every day. We provide English teachers with 
+          step-by-step guidance, ready-to-run lesson plans, and practical training workshops so they can 
+          confidently lead speaking activities and help every child find their voice.
+        </p>
+      </div>
+
+      <div class="teachers-grid">
+        <!-- Guidance Pillar 1 -->
+        <div class="teacher-card">
+          <div class="teacher-icon-box">📘</div>
+          <span class="teacher-badge">Curriculum Roadmap</span>
+          <h3>Teacher’s Companion Handbook</h3>
+          <p>
+            A comprehensive grade-wise companion book that maps 1-to-1 with the student textbook. 
+            Contains 45-minute structured lesson plans, warm-up icebreakers, scripted discussion prompts, and complete answer keys.
+          </p>
+          <ul class="teacher-card-bullets">
+            <li>Minute-by-minute classroom pacing blueprint</li>
+            <li>Specific speaking cues for hesitant and quiet students</li>
+            <li>Clear CEFR learning outcomes for every chapter</li>
+          </ul>
+        </div>
+
+        <!-- Guidance Pillar 2 -->
+        <div class="teacher-card">
+          <div class="teacher-icon-box">🎓</div>
+          <span class="teacher-badge">Professional Development</span>
+          <h3>Hands-On Teacher Training Workshops</h3>
+          <p>
+            Certified master trainers conduct comprehensive offline and online faculty development programs. 
+            Teachers learn proven methodologies to conduct engaging roleplays, debates, and pronunciation choruses.
+          </p>
+          <ul class="teacher-card-bullets">
+            <li>Modern techniques to eliminate student stage fear</li>
+            <li>Phonetics, syllable stress & accent neutralization drills</li>
+            <li>Quarterly pedagogical refresher sessions & certifications</li>
+          </ul>
+        </div>
+
+        <!-- Guidance Pillar 3 -->
+        <div class="teacher-card">
+          <div class="teacher-icon-box">📺</div>
+          <span class="teacher-badge">Zero Prep Overhead</span>
+          <h3>1-Click Smart TV Classroom Tools</h3>
+          <p>
+            Teachers no longer spend hours creating slides or finding speaking games. 
+            With a single click on the interactive flat panel or projector, the entire interactive chapter experience is ready to launch.
+          </p>
+          <ul class="teacher-card-bullets">
+            <li>Pre-loaded gamified quizzes, scrambles & picture prompts</li>
+            <li>Discreet presenter cues & on-screen activity timers</li>
+            <li>Built-in audio models for accurate native pronunciation</li>
+          </ul>
+        </div>
+
+        <!-- Guidance Pillar 4 -->
+        <div class="teacher-card">
+          <div class="teacher-icon-box">📊</div>
+          <span class="teacher-badge">Actionable Insights</span>
+          <h3>Classroom Diagnostic Analytics</h3>
+          <p>
+            Teachers get a dedicated dashboard showing which students completed their home AI speaking practice, 
+            identifying specific grammar slips, vocabulary gaps, and students who need gentle one-on-one encouragement.
+          </p>
+          <ul class="teacher-card-bullets">
+            <li>Pinpoints shy students who need positive reinforcement</li>
+            <li>Aggregated report on common pronunciation errors in the section</li>
+            <li>Automated progress reports for parent-teacher meetings (PTM)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Teacher Testimonial Banner -->
+      <div class="teacher-quote-banner">
+        <div class="quote-symbol">“</div>
+        <div class="quote-body">
+          <p class="quote-text">
+            "Before Excellence Talk, our teachers struggled to get students to speak in English because grammar drills don't build confidence. The Teacher's Companion Guide and interactive Smart TV tools gave our faculty a clear, joyful roadmap. <strong>Our teachers now feel like expert speech mentors, and our English periods have transformed into vibrant, high-energy speaking labs.</strong>"
+          </p>
+          <div class="quote-author">
+            <strong>Revathi Narayanan</strong> • Academic Coordinator, Silver Oaks International School
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE 4-PILLAR METHOD -->
+  <section id="method" class="section method-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Unified Learning Engine</div>
+        <h2>The 4 Pillars That Power Spoken Fluency</h2>
+        <p class="section-desc">
+          How do we get students speaking? By seamlessly connecting the physical world with intelligent digital practice.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card pillar-books">
+          <div class="pillar-icon">📖</div>
+          <span class="pillar-number">Pillar 01</span>
+          <h3>Grade-Wise Printed Books</h3>
+          <p>Every student receives a physical, beautifully designed book containing dialogue scripts, sentence patterns, phonetics, and QR codes that launch matching digital speaking drills.</p>
+          <ul class="pillar-bullets">
+            <li>Tangible ownership for every student</li>
+            <li>Zero screen fatigue for reading and writing</li>
+            <li>Embedded QR codes link directly to AI voice scenarios</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card pillar-classroom">
+          <div class="pillar-icon">📺</div>
+          <span class="pillar-number">Pillar 02</span>
+          <h3>Classroom Smart TV Mode</h3>
+          <p>Teachers display the matching lesson on smart screens. Students engage in whole-class quizzes, team buzzer challenges, pronunciation relays, and dialogue roleplays.</p>
+          <ul class="pillar-bullets">
+            <li>Turns passive classrooms into lively speaking labs</li>
+            <li>Teacher’s companion guide with timed prompts</li>
+            <li>Gamified challenges synchronized chapter-by-chapter</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card pillar-ai">
+          <div class="pillar-icon">🤖</div>
+          <span class="pillar-number">Pillar 03</span>
+          <h3>AI Speaking Coach</h3>
+          <p>Students practice speaking anytime on phones or computers. The AI speaks with them on the exact book chapter and delivers instant feedback on pronunciation, vocabulary, and grammar.</p>
+          <ul class="pillar-bullets">
+            <li>Solves the 1-on-1 speaking time bottleneck</li>
+            <li>Safe, age-appropriate AI voice personas</li>
+            <li>Instant diagnostic scorecards on fluency & syntax</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-card pillar-live">
+          <div class="pillar-icon">🎙️</div>
+          <span class="pillar-number">Pillar 04</span>
+          <h3>Live Trainers & GD Sessions</h3>
+          <p>Certified master trainers lead live small-group sessions. Students showcase what they studied in debates, presentations, storytelling, and high-stakes mock interviews.</p>
+          <ul class="pillar-bullets">
+            <li>Real-world pressure testing and social fluency</li>
+            <li>Formal debates, MUN, and elocution</li>
+            <li>Corporate Group Discussion (GD) for college</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE 6-STEP SPEAKING JOURNEY -->
+  <section id="speaking-loop" class="section loop-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Pedagogical Framework</div>
+        <h2>The 6-Step Speaking Journey</h2>
+        <p class="section-desc">
+          How printed books and technology unite for every chapter: A proven closed loop from page to presentation.
+        </p>
+      </div>
+
+      <!-- Case study box -->
+      <div class="case-study-banner">
+        <div class="case-study-title">
+          <span class="badge-accent">Live Example</span>
+          <strong>Grade 5 • Chapter 4: "Daily Routines & Time Management"</strong>
+        </div>
+        <p>Click any step to see how a student progresses from hesitant reader to confident speaker:</p>
+      </div>
+
+      <div class="loop-timeline">
+        <div class="timeline-step" onclick="selectLoopStep(1)" id="loop-step-1">
+          <div class="step-badge">1</div>
+          <div class="step-content">
+            <span class="step-action">Printed Book</span>
+            <h4>1. Read</h4>
+            <p>Learn target vocabulary (dawn, commute, schedule) and sentence patterns in the printed book.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step" onclick="selectLoopStep(2)" id="loop-step-2">
+          <div class="step-badge">2</div>
+          <div class="step-content">
+            <span class="step-action">Workbook Drill</span>
+            <h4>2. Practise</h4>
+            <p>Complete written gap-fills, comic dialogue bubbles, and desk roleplays with peers.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step" onclick="selectLoopStep(3)" id="loop-step-3">
+          <div class="step-badge">3</div>
+          <div class="step-content">
+            <span class="step-action">Smart TV Mode</span>
+            <h4>3. Learn Together</h4>
+            <p>Teacher runs interactive sentence scramble relays and pronunciation choruses on screen.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step active" onclick="selectLoopStep(4)" id="loop-step-4">
+          <div class="step-badge">4</div>
+          <div class="step-content">
+            <span class="step-action">AI Speaking Coach</span>
+            <h4>4. Speak with AI</h4>
+            <p>Scan book QR code. Practice speaking with the AI voice bot and get instant rubric feedback.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step" onclick="selectLoopStep(5)" id="loop-step-5">
+          <div class="step-badge">5</div>
+          <div class="step-content">
+            <span class="step-action">Live Masterclass</span>
+            <h4>5. Apply</h4>
+            <p>Present a 60-second speech in a live trainer session and participate in a group discussion.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step" onclick="selectLoopStep(6)" id="loop-step-6">
+          <div class="step-badge">6</div>
+          <div class="step-content">
+            <span class="step-action">Analytics Hub</span>
+            <h4>6. Track Progress</h4>
+            <p>Platform records speech clarity score, CEFR level upgrade, and unlocks the Chapter Mastery Badge.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Step Detail Card -->
+      <div class="loop-interactive-card" id="loop-detail-display">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: GRADE-WISE CURRICULUM EXPLORER -->
+  <section id="curriculum" class="section curriculum-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Grade-Wise Structure</div>
+        <h2>Age-Calibrated Curriculum & Books</h2>
+        <p class="section-desc">
+          Every grade level addresses distinct cognitive and communicative stages.
+          Inspect the printed books and digital modules for each tier below:
+        </p>
+      </div>
+
+      <div class="curriculum-tabs">
+        <button class="tab-btn" onclick="showGradeTab('g12')">Grades 1–2</button>
+        <button class="tab-btn active" onclick="showGradeTab('g35')">Grades 3–5</button>
+        <button class="tab-btn" onclick="showGradeTab('g68')">Grades 6–8</button>
+        <button class="tab-btn" onclick="showGradeTab('g910')">Grades 9–10</button>
+        <button class="tab-btn" onclick="showGradeTab('college')">College / Employability</button>
+      </div>
+
+      <div class="grade-detail-box" id="grade-detail-content">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: INTERACTIVE AI SPEAKING COACH SIMULATOR -->
+  <section id="ai-coach" class="section ai-coach-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Live Demonstration</div>
+        <h2>Test the AI Speaking Practice Engine</h2>
+        <p class="section-desc">
+          Experience how our conversational voice AI listens, analyzes, and provides encouraging feedback 
+          calibrated to the student's exact book chapter.
+        </p>
+      </div>
+
+      <div class="ai-demo-wrapper">
+        <div class="ai-chat-column">
+          <div class="ai-chat-header">
+            <div class="avatar-ai">🤖</div>
+            <div>
+              <div class="ai-name">Excellence AI Coach</div>
+              <div class="ai-sub">Grade 5 Tutor Persona • Synced to Ch. 4</div>
+            </div>
+            <span class="status-online">Listening</span>
+          </div>
+
+          <div class="ai-chat-transcript" id="ai-transcript">
+            <div class="bubble ai-bubble">
+              "Hi Aarav! Today we are practicing <strong>Daily Routines</strong> from your book. What is the very first thing you do when you wake up in the morning?"
+            </div>
+            <div class="bubble user-bubble" id="user-sample-speech">
+              "Usually I wake up at six thirty am. Then I wash my face, drink a warm glass of water, and help my mother make breakfast."
+            </div>
+          </div>
+
+          <div class="ai-controls">
+            <button class="btn btn-secondary" onclick="simulateSpeechTest('sample1')">▶️ Test Fluent Student Speech</button>
+            <button class="btn btn-secondary" onclick="simulateSpeechTest('sample2')">▶️ Test Speech with Grammar Slips</button>
+          </div>
+        </div>
+
+        <!-- Evaluation Radar Card -->
+        <div class="ai-eval-column" id="ai-eval-results">
+          <h3>Real-Time Diagnostic Scorecard</h3>
+          <p class="eval-subtitle">Evaluated against Grade 5 CEFR A2/B1 Rubric</p>
+
+          <div class="score-bars">
+            <div class="score-row">
+              <div class="score-labels">
+                <span>Pronunciation & Clarity</span>
+                <strong id="score-pronun">94%</strong>
+              </div>
+              <div class="progress-track"><div class="progress-fill" id="bar-pronun" style="width: 94%"></div></div>
+            </div>
+
+            <div class="score-row">
+              <div class="score-labels">
+                <span>Grammar & Syntax</span>
+                <strong id="score-grammar">91%</strong>
+              </div>
+              <div class="progress-track"><div class="progress-fill" id="bar-grammar" style="width: 91%"></div></div>
+            </div>
+
+            <div class="score-row">
+              <div class="score-labels">
+                <span>Vocabulary Diversity</span>
+                <strong id="score-vocab">88%</strong>
+              </div>
+              <div class="progress-track"><div class="progress-fill" id="bar-vocab" style="width: 88%"></div></div>
+            </div>
+
+            <div class="score-row">
+              <div class="score-labels">
+                <span>Fluency & Rhythm</span>
+                <strong id="score-fluency">90%</strong>
+              </div>
+              <div class="progress-track"><div class="progress-fill" id="bar-fluency" style="width: 90%"></div></div>
+            </div>
+          </div>
+
+          <div class="ai-feedback-box" id="ai-coach-advice">
+            <div class="feedback-highlight">🌟 <strong>Coach Feedback:</strong> "Excellent sentence flow! You used sequence transitions like 'then' and 'after' smoothly. Next time, try adding an adjective like 'refreshing' glass of water."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: FOR SCHOOLS & INSTITUTIONS -->
+  <section id="institutions" class="section licensing-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">For School & College Leadership</div>
+        <h2>Bring Confident English Speaking to Your Institution</h2>
+        <p class="section-desc">
+          Complete end-to-end implementation: Printed books delivered to campus, classroom software for teachers, 
+          AI apps for students, and certified live trainer masterclasses.
+        </p>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Model A -->
+        <div class="pricing-card featured-pricing">
+          <div class="card-badge">Most Popular for K-12</div>
+          <h3>Model A: All-Inclusive Blended License</h3>
+          <p class="pricing-sub">One transparent fee per student covering everything physical and digital.</p>
+          <div class="price-figure">₹ 1,450 <span>/ student / year</span></div>
+          <ul class="pricing-features">
+            <li>✓ <strong>Printed Student Book</strong> delivered direct to campus</li>
+            <li>✓ <strong>24/7 AI Speaking Coach App</strong> for all students</li>
+            <li>✓ <strong>Classroom Smart TV Mode</strong> software for all English teachers</li>
+            <li>✓ <strong>Teacher’s Hardcover Companion Guide</strong> & 45-min lesson plans</li>
+            <li>✓ <strong>Live Trainer Masterclasses</strong> (Monthly live GDs / Debates)</li>
+            <li>✓ Certified CEFR spoken English milestone certificates</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="openModal('quote-a')">Request School Proposal</button>
+        </div>
+
+        <!-- Model B -->
+        <div class="pricing-card">
+          <div class="card-badge-muted">Chains & Higher Ed</div>
+          <h3>Model B: Platform Base + Book Pass-Through</h3>
+          <p class="pricing-sub">Split pricing for university colleges and large network institutions.</p>
+          <div class="price-figure">₹ 850 <span>+ Book Cost</span></div>
+          <ul class="pricing-features">
+            <li>✓ <strong>Digital Platform & AI Coach SaaS License</strong> (₹850/student)</li>
+            <li>✓ <strong>Printed Books billed at actual print & logistics cost</strong></li>
+            <li>✓ Flexible book distribution via campus bookstore or portal</li>
+            <li>✓ Campus LMS integration (Canvas, Google Classroom, Moodle)</li>
+            <li>✓ Optional live trainer hours booked as credit packs</li>
+            <li>✓ Professional English & Employability Workbook for campus placements</li>
+          </ul>
+          <button class="btn btn-outline btn-block" onclick="openModal('quote-b')">Request University Proposal</button>
+        </div>
+      </div>
+
+      <!-- Guarantees Bar -->
+      <div class="guarantees-bar">
+        <div class="guarantee-col">
+          <span class="icon">📦</span>
+          <div>
+            <strong>Campus Logistics Included</strong>
+            <p>Books are shrink-wrapped by grade and section, delivered 3 weeks prior to session start.</p>
+          </div>
+        </div>
+        <div class="guarantee-col">
+          <span class="icon">👩‍🏫</span>
+          <div>
+            <strong>Teacher Onboarding Guaranteed</strong>
+            <p>Every school receives 2 comprehensive live training sessions for their English faculty.</p>
+          </div>
+        </div>
+        <div class="guarantee-col">
+          <span class="icon">📊</span>
+          <div>
+            <strong>Leadership Analytics Portal</strong>
+            <p>Principals and Deans track spoken English CEFR growth across every section in real time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container text-center">
+      <h2>Help Every Student Find Their Voice</h2>
+      <p>Give your students the confidence to speak English fluently, articulate their ideas, and shape their future.</p>
+      <div class="hero-cta-group">
+        <button class="btn btn-primary btn-lg" onclick="openModal('book-demo')">Schedule Institutional Demo</button>
+        <button class="btn btn-outline-light btn-lg" onclick="openModal('sample-chapter')">Download Sample Book & Guide</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Excellence Talk Logo" class="footer-logo-img">
+        <p>The integrated Phygital English learning ecosystem combining printed curriculum books, classroom smart screens, AI voice coaches, and live master trainers.</p>
+        <p class="copyright">© 2026 Excellence Talk Systems. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>How We Help</h4>
+          <a href="#how-we-help">Overcoming Shyness</a>
+          <a href="#how-we-help">Stopping Mental Translation</a>
+          <a href="#how-we-help">Pronunciation & Clarity</a>
+          <a href="#how-we-help">Public Speaking & Debates</a>
+          <a href="#achievements">Student Achievements</a>
+        </div>
+        <div class="footer-col">
+          <h4>The 4 Pillars</h4>
+          <a href="#method">Grade-Wise Printed Books</a>
+          <a href="#method">Classroom Smart TV Mode</a>
+          <a href="#ai-coach">AI Speaking Coach</a>
+          <a href="#method">Live Trainers & GDs</a>
+          <a href="#speaking-loop">The 6-Step Speaking Journey</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Institutions</h4>
+          <a href="#institutions">School Pricing & Models</a>
+          <a href="#institutions">College Placement Solutions</a>
+          <a href="#" onclick="openModal('sample-chapter')">Sample Book PDF</a>
+          <a href="#" onclick="openModal('book-demo')">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Lead Capture -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
