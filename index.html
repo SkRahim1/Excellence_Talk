@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Excellence Talk | Find Your Voice. Shape Your Future.</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261102">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -760,8 +760,8 @@
     </div>
   </footer>
 
-  <!-- Welcome Key Highlights Popup (Shows on entry) -->
-  <div class="welcome-popup-backdrop" id="welcome-popup-backdrop" onclick="closeWelcomePopup(event)">
+  <!-- Welcome Key Highlights Popup (Appears immediately on entry) -->
+  <div class="welcome-popup-backdrop open" id="welcome-popup-backdrop" onclick="closeWelcomePopup(event)">
     <div class="welcome-popup-card" onclick="event.stopPropagation()">
       <button class="welcome-popup-close" onclick="closeWelcomePopup()" aria-label="Close highlights popup">✕</button>
       
@@ -857,13 +857,6 @@
           📅 Book a Demo
         </button>
       </div>
-
-      <div class="welcome-popup-footer">
-        <label class="welcome-popup-checkbox-label">
-          <input type="checkbox" id="dont-show-again-checkbox">
-          <span>Don't show this popup again during this session</span>
-        </label>
-      </div>
     </div>
   </div>
 
@@ -875,6 +868,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20261102"></script>
 </body>
 </html>
