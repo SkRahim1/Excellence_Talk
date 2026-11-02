@@ -65,9 +65,14 @@
   <!-- Hero Section -->
   <header class="hero-section">
     <div class="container hero-container">
-      <div class="hero-tagline-badge">
-        <span class="pulse-dot"></span>
-        <span>AI-POWERED ENGLISH LEARNING • GRADE 1 TO COLLEGE</span>
+      <div class="hero-tagline-wrapper">
+        <div class="hero-tagline-badge">
+          <span class="pulse-dot"></span>
+          <span>AI-POWERED ENGLISH LEARNING • GRADE 1 TO COLLEGE</span>
+        </div>
+        <button class="hero-highlights-trigger" onclick="openWelcomePopup()" title="Click to view key highlights">
+          ✨ View Key Highlights
+        </button>
       </div>
 
       <h1 class="hero-title">
@@ -754,6 +759,113 @@
       </div>
     </div>
   </footer>
+
+  <!-- Welcome Key Highlights Popup (Shows on entry) -->
+  <div class="welcome-popup-backdrop" id="welcome-popup-backdrop" onclick="closeWelcomePopup(event)">
+    <div class="welcome-popup-card" onclick="event.stopPropagation()">
+      <button class="welcome-popup-close" onclick="closeWelcomePopup()" aria-label="Close highlights popup">✕</button>
+      
+      <div class="welcome-popup-header">
+        <div class="welcome-popup-topline">
+          <img src="assets/logo.png" alt="Excellence Talk Logo" class="welcome-popup-logo">
+          <div class="welcome-popup-pill">
+            <span class="pulse-dot"></span>
+            <span>KEY HIGHLIGHTS</span>
+          </div>
+        </div>
+        <h2 class="welcome-popup-title">Find Your Voice. <span class="gradient-text">Shape Your Future.</span></h2>
+        <p class="welcome-popup-subtitle">
+          Welcome to Excellence Talk — India's premier Phygital English ecosystem uniting printed books, classroom smart screens, AI voice coaches, and live master trainers.
+        </p>
+      </div>
+
+      <!-- Highlights Grid -->
+      <div class="welcome-highlights-grid">
+        <div class="welcome-highlight-item">
+          <div class="welcome-highlight-icon">📖</div>
+          <div class="welcome-highlight-text">
+            <h4>Grade-Wise Printed Books</h4>
+            <p>Annual physical textbooks (Grades 1 to College) with stories, dialogues, and QR codes syncing to digital drills.</p>
+          </div>
+        </div>
+
+        <div class="welcome-highlight-item">
+          <div class="welcome-highlight-icon">📺</div>
+          <div class="welcome-highlight-text">
+            <h4>Smart TV Classroom Mode</h4>
+            <p>1-click interactive games, sentence relays, and pronunciation choruses designed for zero teacher lesson prep.</p>
+          </div>
+        </div>
+
+        <div class="welcome-highlight-item">
+          <div class="welcome-highlight-icon">🤖</div>
+          <div class="welcome-highlight-text">
+            <h4>24/7 AI Speaking Coach</h4>
+            <p>Safe, judgment-free voice practice with instant scoring on pronunciation, grammar, vocabulary, and fluency.</p>
+          </div>
+        </div>
+
+        <div class="welcome-highlight-item">
+          <div class="welcome-highlight-icon">🎙️</div>
+          <div class="welcome-highlight-text">
+            <h4>Live Trainers & Debates</h4>
+            <p>Scheduled small-group sessions for storytelling, parliamentary debates, and college campus placement GDs.</p>
+          </div>
+        </div>
+
+        <div class="welcome-highlight-item welcome-highlight-span">
+          <div class="welcome-highlight-icon">👩‍🏫</div>
+          <div class="welcome-highlight-text">
+            <h4>Teacher Guidance & Training Included</h4>
+            <p>Dedicated 45-minute lesson blueprints, Companion Handbooks, and certified workshops so every teacher succeeds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Trust Metric Strip -->
+      <div class="welcome-popup-metrics">
+        <div class="popup-metric">
+          <strong>94%</strong>
+          <span>Fear Eliminated</span>
+        </div>
+        <div class="popup-metric-divider"></div>
+        <div class="popup-metric">
+          <strong>100K+</strong>
+          <span>Voice Drills Done</span>
+        </div>
+        <div class="popup-metric-divider"></div>
+        <div class="popup-metric">
+          <strong>100%</strong>
+          <span>Book & App Sync</span>
+        </div>
+        <div class="popup-metric-divider"></div>
+        <div class="popup-metric">
+          <strong>Grades 1–College</strong>
+          <span>Graded Pathway</span>
+        </div>
+      </div>
+
+      <!-- Popup Actions -->
+      <div class="welcome-popup-actions">
+        <button class="btn btn-primary" onclick="exploreFromPopup()">
+          🚀 Explore the Platform
+        </button>
+        <button class="btn btn-outline" onclick="closeWelcomePopup(); openModal('sample-chapter')">
+          📖 Sample Book PDF
+        </button>
+        <button class="btn btn-outline" onclick="closeWelcomePopup(); openModal('book-demo')">
+          📅 Book a Demo
+        </button>
+      </div>
+
+      <div class="welcome-popup-footer">
+        <label class="welcome-popup-checkbox-label">
+          <input type="checkbox" id="dont-show-again-checkbox">
+          <span>Don't show this popup again during this session</span>
+        </label>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal for Lead Capture -->
   <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">

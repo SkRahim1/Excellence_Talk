@@ -563,10 +563,49 @@ function toggleMobileMenu() {
   }
 }
 
-// Close drawer on Escape key
+// Welcome Highlights Popup Management
+function openWelcomePopup() {
+  const backdrop = document.getElementById('welcome-popup-backdrop');
+  if (!backdrop) return;
+  backdrop.style.display = 'flex';
+  setTimeout(() => {
+    backdrop.classList.add('open');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWelcomePopup(e) {
+  const backdrop = document.getElementById('welcome-popup-backdrop');
+  if (!backdrop) return;
+  
+  const checkbox = document.getElementById('dont-show-again-checkbox');
+  if (checkbox && checkbox.checked) {
+    sessionStorage.setItem('et_welcome_dismissed', 'true');
+  }
+
+  backdrop.classList.remove('open');
+  setTimeout(() => {
+    backdrop.style.display = 'none';
+    const regularModal = document.getElementById('modal-backdrop');
+    if (!regularModal || !regularModal.classList.contains('open')) {
+      document.body.style.overflow = '';
+    }
+  }, 300);
+}
+
+function exploreFromPopup() {
+  closeWelcomePopup();
+  const target = document.getElementById('how-we-help') || document.getElementById('method');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Close drawer & popups on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeModal();
+    closeWelcomePopup();
     const drawer = document.getElementById('mobile-menu-drawer');
     if (drawer && drawer.classList.contains('open')) {
       toggleMobileMenu();
@@ -578,4 +617,12 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   selectLoopStep(4);
   showGradeTab('g35');
+
+  // Trigger Welcome Key Highlights Popup on entry
+  const isDismissed = sessionStorage.getItem('et_welcome_dismissed');
+  if (!isDismissed) {
+    setTimeout(() => {
+      openWelcomePopup();
+    }, 700);
+  }
 });
