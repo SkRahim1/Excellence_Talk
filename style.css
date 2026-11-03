@@ -209,6 +209,20 @@ a {
   width: 100%;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #0084FF 0%, #00C6FF 50%, #10B981 100%);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.6);
+  pointer-events: none;
+}
+
 /* Navbar */
 .navbar {
   position: sticky;
@@ -1639,7 +1653,7 @@ a {
 .welcome-popup-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 29, 86, 0.75);
+  background: rgba(10, 29, 86, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 3000;
@@ -1653,6 +1667,11 @@ a {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
+  animation: popupBackdropFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-popup-backdrop.closing {
+  animation: popupBackdropFadeOut 0.28s cubic-bezier(0.7, 0, 0.84, 0) forwards !important;
 }
 
 .welcome-popup-card {
@@ -1662,10 +1681,102 @@ a {
   width: 100%;
   padding: 34px 38px 28px;
   position: relative;
-  box-shadow: 0 25px 60px -10px rgba(10, 29, 86, 0.4), 0 0 0 1px rgba(191, 219, 254, 0.5);
+  box-shadow: 0 25px 60px -10px rgba(10, 29, 86, 0.45), 0 0 0 1px rgba(191, 219, 254, 0.6);
   max-height: 92vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.welcome-popup-backdrop.open .welcome-popup-card {
+  animation: popupCardEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-popup-backdrop.closing .welcome-popup-card {
+  animation: popupCardExit 0.28s cubic-bezier(0.7, 0, 0.84, 0) forwards !important;
+}
+
+@keyframes popupBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupBackdropFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes popupCardEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(36px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.02) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes popupCardExit {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+}
+
+/* Staggered items cascade inside popup */
+.welcome-popup-backdrop.open .welcome-popup-header {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.welcome-popup-backdrop.open .welcome-highlight-item:nth-child(1) {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+.welcome-popup-backdrop.open .welcome-highlight-item:nth-child(2) {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+.welcome-popup-backdrop.open .welcome-highlight-item:nth-child(3) {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+.welcome-popup-backdrop.open .welcome-highlight-item:nth-child(4) {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both;
+}
+.welcome-popup-backdrop.open .welcome-highlight-item:nth-child(5) {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+.welcome-popup-backdrop.open .welcome-popup-metrics {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}
+
+.welcome-popup-backdrop.open .welcome-popup-actions {
+  animation: popupItemSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}
+
+@keyframes popupItemSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .welcome-popup-close {
@@ -2552,5 +2663,112 @@ a {
   .footer-links-group {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+}
+
+/* ==========================================================================
+   Scroll-Triggered Reveal Animations
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Staggered Grid Animations */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.04s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.28s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.44s; opacity: 1; transform: translateY(0); }
+
+/* Card hover micro-interactions */
+.trans-card,
+.story-card,
+.teacher-card,
+.pillar-card,
+.pricing-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .welcome-popup-backdrop.open,
+  .welcome-popup-backdrop.open .welcome-popup-card,
+  .welcome-popup-backdrop.open .welcome-highlight-item,
+  .welcome-popup-backdrop.open .welcome-popup-metrics,
+  .welcome-popup-backdrop.open .welcome-popup-actions {
+    animation: none !important;
+  }
+
+  .scroll-progress-bar {
+    display: none !important;
   }
 }

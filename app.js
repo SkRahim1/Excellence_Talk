@@ -567,6 +567,7 @@ function toggleMobileMenu() {
 function openWelcomePopup() {
   const backdrop = document.getElementById('welcome-popup-backdrop');
   if (!backdrop) return;
+  backdrop.classList.remove('closing');
   backdrop.classList.add('open');
   backdrop.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -575,20 +576,75 @@ function openWelcomePopup() {
 function closeWelcomePopup(e) {
   const backdrop = document.getElementById('welcome-popup-backdrop');
   if (!backdrop) return;
-  backdrop.classList.remove('open');
-  backdrop.style.display = 'none';
-  const regularModal = document.getElementById('modal-backdrop');
-  if (!regularModal || !regularModal.classList.contains('open')) {
-    document.body.style.overflow = '';
-  }
+
+  // Smooth exit animation
+  backdrop.classList.add('closing');
+  setTimeout(() => {
+    backdrop.classList.remove('open');
+    backdrop.classList.remove('closing');
+    backdrop.style.display = 'none';
+    const regularModal = document.getElementById('modal-backdrop');
+    if (!regularModal || !regularModal.classList.contains('open')) {
+      document.body.style.overflow = '';
+    }
+  }, 260);
 }
 
 function exploreFromPopup() {
   closeWelcomePopup();
   const target = document.getElementById('how-we-help') || document.getElementById('method');
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }, 150);
   }
+}
+
+// Scroll Reveal & Intersection Observer
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll(
+    '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger'
+  );
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback if browser doesn't support IntersectionObserver
+    animatedElements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+// Scroll Reading Progress Bar Tracker
+function initScrollProgressBar() {
+  const progressBar = document.getElementById('scroll-progress-bar');
+  if (!progressBar) return;
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progressPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = Math.min(100, Math.max(0, progressPercent)) + '%';
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
 }
 
 // Close drawer & popups on Escape key
@@ -608,4 +664,6 @@ document.addEventListener('DOMContentLoaded', () => {
   selectLoopStep(4);
   showGradeTab('g35');
   openWelcomePopup();
+  initScrollAnimations();
+  initScrollProgressBar();
 });

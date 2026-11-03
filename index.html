@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Excellence Talk | Find Your Voice. Shape Your Future.</title>
-  <link rel="stylesheet" href="style.css?v=20261102">
+  <link rel="stylesheet" href="style.css?v=20261103">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Scroll Reading Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
 
   <!-- Navigation -->
   <nav class="navbar">
@@ -93,7 +96,7 @@
       </div>
 
       <!-- Trust & Impact Proof Bar -->
-      <div class="hero-stats">
+      <div class="hero-stats reveal-scale">
         <div class="stat-item">
           <div class="stat-number">94%</div>
           <div class="stat-label">Overcome Stage Fear & Hesitation</div>
@@ -120,7 +123,7 @@
   <!-- SECTION 1: HOW WE HELP STUDENTS SPEAK -->
   <section id="how-we-help" class="section how-it-works-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">The Fluency Solution</div>
         <h2>Why Students Struggle to Speak — And How We Solve It</h2>
         <p class="section-desc">
@@ -129,7 +132,7 @@
         </p>
       </div>
 
-      <div class="transformation-grid">
+      <div class="transformation-grid reveal-stagger">
         <!-- Feature 1 -->
         <div class="trans-card">
           <div class="trans-icon-box">🛡️</div>
@@ -192,7 +195,7 @@
   <!-- SECTION 2: STUDENT ACHIEVEMENTS & TRANSFORMATION STORIES -->
   <section id="achievements" class="section achievements-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Verified Milestones</div>
         <h2>Student Achievements & Real Transformations</h2>
         <p class="section-desc">
@@ -202,7 +205,7 @@
       </div>
 
       <!-- Testimonial / Story Cards Grid -->
-      <div class="stories-grid">
+      <div class="stories-grid reveal-stagger">
         <!-- Story 1 -->
         <div class="story-card">
           <div class="story-header">
@@ -262,7 +265,7 @@
       </div>
 
       <!-- Institutional Achievement Highlights -->
-      <div class="institutional-achievements-banner">
+      <div class="institutional-achievements-banner reveal-scale">
         <div class="inst-stat">
           <div class="inst-num">85+</div>
           <div class="inst-text">Partner Schools & Colleges where 100% of students actively speak English daily</div>
@@ -284,7 +287,7 @@
   <!-- SECTION: TEACHER GUIDANCE & EMPOWERMENT -->
   <section id="teachers" class="section teachers-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Teacher Empowerment</div>
         <h2>Complete Guidance & Training for School Teachers</h2>
         <p class="section-desc">
@@ -294,7 +297,7 @@
         </p>
       </div>
 
-      <div class="teachers-grid">
+      <div class="teachers-grid reveal-stagger">
         <!-- Guidance Pillar 1 -->
         <div class="teacher-card">
           <div class="teacher-icon-box">📘</div>
@@ -361,7 +364,7 @@
       </div>
 
       <!-- Teacher Testimonial Banner -->
-      <div class="teacher-quote-banner">
+      <div class="teacher-quote-banner reveal">
         <div class="quote-symbol">“</div>
         <div class="quote-body">
           <p class="quote-text">
@@ -378,7 +381,7 @@
   <!-- SECTION 3: THE 4-PILLAR METHOD -->
   <section id="method" class="section method-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Unified Learning Engine</div>
         <h2>The 4 Pillars That Power Spoken Fluency</h2>
         <p class="section-desc">
@@ -386,7 +389,7 @@
         </p>
       </div>
 
-      <div class="pillars-grid">
+      <div class="pillars-grid reveal-stagger">
         <!-- Pillar 1 -->
         <div class="pillar-card pillar-books">
           <div class="pillar-icon">📖</div>
@@ -445,7 +448,7 @@
   <!-- SECTION 4: THE 6-STEP SPEAKING JOURNEY -->
   <section id="speaking-loop" class="section loop-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Pedagogical Framework</div>
         <h2>The 6-Step Speaking Journey</h2>
         <p class="section-desc">
@@ -454,7 +457,7 @@
       </div>
 
       <!-- Case study box -->
-      <div class="case-study-banner">
+      <div class="case-study-banner reveal">
         <div class="case-study-title">
           <span class="badge-accent">Live Example</span>
           <strong>Grade 5 • Chapter 4: "Daily Routines & Time Management"</strong>
@@ -462,7 +465,7 @@
         <p>Click any step to see how a student progresses from hesitant reader to confident speaker:</p>
       </div>
 
-      <div class="loop-timeline">
+      <div class="loop-timeline reveal-stagger">
         <div class="timeline-step" onclick="selectLoopStep(1)" id="loop-step-1">
           <div class="step-badge">1</div>
           <div class="step-content">
@@ -519,7 +522,7 @@
       </div>
 
       <!-- Interactive Step Detail Card -->
-      <div class="loop-interactive-card" id="loop-detail-display">
+      <div class="loop-interactive-card reveal" id="loop-detail-display">
         <!-- Rendered dynamically by app.js -->
       </div>
     </div>
@@ -528,7 +531,7 @@
   <!-- SECTION 5: GRADE-WISE CURRICULUM EXPLORER -->
   <section id="curriculum" class="section curriculum-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Grade-Wise Structure</div>
         <h2>Age-Calibrated Curriculum & Books</h2>
         <p class="section-desc">
@@ -537,7 +540,7 @@
         </p>
       </div>
 
-      <div class="curriculum-tabs">
+      <div class="curriculum-tabs reveal">
         <button class="tab-btn" onclick="showGradeTab('g12')">Grades 1–2</button>
         <button class="tab-btn active" onclick="showGradeTab('g35')">Grades 3–5</button>
         <button class="tab-btn" onclick="showGradeTab('g68')">Grades 6–8</button>
@@ -545,7 +548,7 @@
         <button class="tab-btn" onclick="showGradeTab('college')">College / Employability</button>
       </div>
 
-      <div class="grade-detail-box" id="grade-detail-content">
+      <div class="grade-detail-box reveal-scale" id="grade-detail-content">
         <!-- Injected via app.js -->
       </div>
     </div>
@@ -554,7 +557,7 @@
   <!-- SECTION 6: INTERACTIVE AI SPEAKING COACH SIMULATOR -->
   <section id="ai-coach" class="section ai-coach-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">Live Demonstration</div>
         <h2>Test the AI Speaking Practice Engine</h2>
         <p class="section-desc">
@@ -564,7 +567,7 @@
       </div>
 
       <div class="ai-demo-wrapper">
-        <div class="ai-chat-column">
+        <div class="ai-chat-column reveal-left">
           <div class="ai-chat-header">
             <div class="avatar-ai">🤖</div>
             <div>
@@ -590,7 +593,7 @@
         </div>
 
         <!-- Evaluation Radar Card -->
-        <div class="ai-eval-column" id="ai-eval-results">
+        <div class="ai-eval-column reveal-right" id="ai-eval-results">
           <h3>Real-Time Diagnostic Scorecard</h3>
           <p class="eval-subtitle">Evaluated against Grade 5 CEFR A2/B1 Rubric</p>
 
@@ -639,7 +642,7 @@
   <!-- SECTION 7: FOR SCHOOLS & INSTITUTIONS -->
   <section id="institutions" class="section licensing-section">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <div class="section-tag">For School & College Leadership</div>
         <h2>Bring Confident English Speaking to Your Institution</h2>
         <p class="section-desc">
@@ -648,7 +651,7 @@
         </p>
       </div>
 
-      <div class="pricing-cards-grid">
+      <div class="pricing-cards-grid reveal-stagger">
         <!-- Model A -->
         <div class="pricing-card featured-pricing">
           <div class="card-badge">Most Popular for K-12</div>
@@ -685,7 +688,7 @@
       </div>
 
       <!-- Guarantees Bar -->
-      <div class="guarantees-bar">
+      <div class="guarantees-bar reveal">
         <div class="guarantee-col">
           <span class="icon">📦</span>
           <div>
@@ -712,7 +715,16 @@
   </section>
 
   <!-- CTA Banner -->
-  <section class="cta-banner">
+  <section class="cta-banner reveal-scale">
+    <div class="container text-center">
+      <h2>Help Every Student Find Their Voice</h2>
+      <p>Give your students the confidence to speak English fluently, articulate their ideas, and shape their future.</p>
+      <div class="hero-cta-group">
+        <button class="btn btn-primary btn-lg" onclick="openModal('book-demo')">Schedule Institutional Demo</button>
+        <button class="btn btn-outline-light btn-lg" onclick="openModal('sample-chapter')">Download Sample Book & Guide</button>
+      </div>
+    </div>
+  </section>
     <div class="container text-center">
       <h2>Help Every Student Find Their Voice</h2>
       <p>Give your students the confidence to speak English fluently, articulate their ideas, and shape their future.</p>
@@ -868,6 +880,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=20261102"></script>
+  <script src="app.js?v=20261103"></script>
 </body>
 </html>
