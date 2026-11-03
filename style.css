@@ -2640,6 +2640,11 @@ a {
     padding: 6px 12px;
   }
 
+  .hero-highlights-trigger {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -2664,78 +2669,193 @@ a {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .welcome-popup-backdrop {
+    padding: 10px;
+  }
+
+  .welcome-popup-card {
+    padding: 18px 14px 14px;
+    width: 100%;
+    max-height: 94vh;
+  }
+
+  .welcome-popup-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .welcome-popup-title {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .welcome-popup-subtitle {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .welcome-highlight-item {
+    padding: 10px 12px;
+  }
+
+  .welcome-highlight-icon {
+    font-size: 1.25rem;
+  }
+
+  .welcome-highlight-text h4 {
+    font-size: 0.9rem;
+  }
+
+  .welcome-highlight-text p {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .welcome-popup-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .popup-metric strong {
+    font-size: 1.15rem;
+  }
+
+  .popup-metric span {
+    font-size: 0.7rem;
+  }
+
+  .welcome-popup-actions {
+    gap: 6px;
+  }
+
+  .welcome-popup-actions .btn {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
 }
 
 /* ==========================================================================
-   Scroll-Triggered Reveal Animations
+   Mobile-Friendly Visibility Assurance (max-width: 900px)
+   Guarantees 100% immediate content visibility on all mobile screens.
+   Prevents any blank or white screens when scrolling down on mobile devices.
    ========================================================================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+@media (max-width: 900px) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-stagger > *,
+  html.has-scroll-anim .reveal,
+  html.has-scroll-anim .reveal-left,
+  html.has-scroll-anim .reveal-right,
+  html.has-scroll-anim .reveal-scale,
+  html.has-scroll-anim .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
 }
 
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-left.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-right.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
-
+/* ==========================================================================
+   Scroll-Triggered Reveal Animations (Progressive Enhancement)
+   Default / Baseline: Content is 100% visible and accessible.
+   Animations only activate on desktop (>= 901px) when JS confirms readiness.
+   ========================================================================== */
+.reveal,
+.reveal-left,
+.reveal-right,
 .reveal-scale {
-  opacity: 0;
-  transform: scale(0.94) translateY(24px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-scale.revealed {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: none;
 }
 
-/* Staggered Grid Animations */
 .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.04s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.28s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.44s; opacity: 1; transform: translateY(0); }
+/* Activated strictly on desktop screens (>= 901px) with JS support */
+@media (min-width: 901px) {
+  html.has-scroll-anim .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  html.has-scroll-anim .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html.has-scroll-anim .reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  html.has-scroll-anim .reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  html.has-scroll-anim .reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  html.has-scroll-anim .reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  html.has-scroll-anim .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  html.has-scroll-anim .reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  /* Staggered Grid Animations */
+  html.has-scroll-anim .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  html.has-scroll-anim .reveal-stagger.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.04s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.10s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.22s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.28s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.34s; }
+  html.has-scroll-anim .reveal-stagger.revealed > *:nth-child(n+7) { transition-delay: 0.40s; }
+}
 
 /* Card hover micro-interactions */
 .trans-card,
@@ -2754,7 +2874,12 @@ a {
   .reveal-left,
   .reveal-right,
   .reveal-scale,
-  .reveal-stagger > * {
+  .reveal-stagger > *,
+  html.has-scroll-anim .reveal,
+  html.has-scroll-anim .reveal-left,
+  html.has-scroll-anim .reveal-right,
+  html.has-scroll-anim .reveal-scale,
+  html.has-scroll-anim .reveal-stagger > * {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

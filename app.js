@@ -570,52 +570,63 @@ function openWelcomePopup() {
   backdrop.classList.remove('closing');
   backdrop.classList.add('open');
   backdrop.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  // Only lock desktop body scrolling; never trap touch screen scrolling on mobile
+  if (window.innerWidth > 768) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 
 function closeWelcomePopup(e) {
   const backdrop = document.getElementById('welcome-popup-backdrop');
+  // Immediately restore body overflow so user can scroll without any lock or hesitation
+  document.body.style.overflow = '';
   if (!backdrop) return;
 
-  // Smooth exit animation
   backdrop.classList.add('closing');
   setTimeout(() => {
     backdrop.classList.remove('open');
     backdrop.classList.remove('closing');
     backdrop.style.display = 'none';
-    const regularModal = document.getElementById('modal-backdrop');
-    if (!regularModal || !regularModal.classList.contains('open')) {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = '';
   }, 260);
 }
 
 function exploreFromPopup() {
   closeWelcomePopup();
+  document.body.style.overflow = '';
   const target = document.getElementById('how-we-help') || document.getElementById('method');
   if (target) {
     setTimeout(() => {
       target.scrollIntoView({ behavior: 'smooth' });
-    }, 150);
+    }, 50);
   }
 }
 
-// Scroll Reveal & Intersection Observer
+// Scroll Reveal & Progressive Animations
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(
     '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger'
   );
 
-  if (!('IntersectionObserver' in window)) {
-    // Fallback if browser doesn't support IntersectionObserver
+  const revealAllNow = () => {
     animatedElements.forEach(el => el.classList.add('revealed'));
+  };
+
+  // On mobile screens (<= 900px), immediately reveal all elements so content is 100% visible on scroll
+  if (window.innerWidth <= 900 || !('IntersectionObserver' in window)) {
+    revealAllNow();
     return;
   }
 
+  // On desktop screens, activate progressive enhancement class
+  document.documentElement.classList.add('has-scroll-anim');
+
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.12
+    rootMargin: '120px 0px 80px 0px',
+    threshold: 0.01
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -628,6 +639,23 @@ function initScrollAnimations() {
   }, observerOptions);
 
   animatedElements.forEach(el => observer.observe(el));
+
+  // Safety fallback: ensure all elements are visible even if observer encounters any delayed layout
+  setTimeout(revealAllNow, 800);
+
+  // Backup scroll event listener for desktop
+  const onScrollCheck = () => {
+    const vh = window.innerHeight;
+    animatedElements.forEach(el => {
+      if (!el.classList.contains('revealed')) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= vh + 100 && rect.bottom >= -100) {
+          el.classList.add('revealed');
+        }
+      }
+    });
+  };
+  window.addEventListener('scroll', onScrollCheck, { passive: true });
 }
 
 // Scroll Reading Progress Bar Tracker
