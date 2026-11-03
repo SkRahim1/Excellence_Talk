@@ -687,6 +687,27 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Founder Contact Router (Smart Call / WhatsApp Dispatcher)
+function contactFounder(channel) {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const phone = '9284306159';
+  const message = 'Hello Rahim sir, I would like to connect regarding Excellence Talk.';
+  const waUrl = `https://wa.me/91${phone}?text=${encodeURIComponent(message)}`;
+
+  if (channel === 'call') {
+    window.location.href = `tel:${phone}`;
+  } else if (channel === 'whatsapp') {
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  } else {
+    // Smart auto-detection: dialler on mobile, WhatsApp on desktop
+    if (isMobile) {
+      window.location.href = `tel:${phone}`;
+    } else {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   selectLoopStep(4);
