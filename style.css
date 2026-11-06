@@ -2347,6 +2347,46 @@ a {
   line-height: 1;
 }
 
+
+/* Official Entity Clarification Strip */
+.entity-clarification-strip {
+  margin-top: 36px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.entity-strip-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.entity-strip-content h4 {
+  font-size: 1.05rem;
+  color: #0369A1;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.entity-strip-content p {
+  font-size: 0.95rem;
+  color: #0C4A6E;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .entity-clarification-strip {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+}
+
 /* Modal */
 .modal-backdrop {
   position: fixed;
