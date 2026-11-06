@@ -708,6 +708,22 @@ function contactFounder(channel) {
   }
 }
 
+// FAQ Accordion single-open handler
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach((other) => {
+          if (other !== item && other.open) {
+            other.removeAttribute('open');
+          }
+        });
+      }
+    });
+  });
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   selectLoopStep(4);
@@ -715,4 +731,5 @@ document.addEventListener('DOMContentLoaded', () => {
   openWelcomePopup();
   initScrollAnimations();
   initScrollProgressBar();
+  initFaqAccordion();
 });

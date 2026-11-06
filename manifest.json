@@ -1,0 +1,16 @@
+{
+  "name": "Excellence Talk - Excellence English Speaking",
+  "short_name": "Excellence Talk",
+  "description": "AI-powered English speaking and communication ecosystem for school and college students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0084FF",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}

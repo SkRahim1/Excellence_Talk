@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://excellencetalk.in/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://excellencetalk.in/assets/logo.png</image:loc>
+      <image:title>Excellence Talk Phygital - English Speaking &amp; Communication Ecosystem</image:title>
+      <image:caption>Official logo of Excellence Talk Phygital and Excellence English Speaking program founded by Rahim Shaikh</image:caption>
+    </image:image>
+  </url>
+</urlset>
