@@ -8,8 +8,56 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://excellencetalk.in/assets/logo.png</image:loc>
-      <image:title>Excellence Talk Phygital - English Speaking &amp; Communication Ecosystem</image:title>
-      <image:caption>Official logo of Excellence Talk Phygital and Excellence English Speaking program</image:caption>
+      <image:title>Excellence Talk | Spoken English &amp; Communication Skills for Schools and Colleges</image:title>
+      <image:caption>Official logo of Excellence Talk Phygital English Speaking and Communication Ecosystem</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/spoken-english-for-schools.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/grade-wise-english-books.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/ai-english-speaking-practice.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/english-communication-for-colleges.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/public-speaking-for-students.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/online-english-speaking-practice.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/institutional-partnerships.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://excellencetalk.in/articles.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
