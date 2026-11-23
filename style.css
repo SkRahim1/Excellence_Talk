@@ -3291,31 +3291,6 @@ a {
     gap: 14px;
   }
 
-  /* Classroom Smart TV */
-  .tv-bezel {
-    padding: 10px;
-    border-radius: 14px;
-  }
-
-  .tv-screen {
-    padding: 16px;
-    min-height: auto;
-  }
-
-  .tv-slide-title {
-    font-size: 1.15rem;
-  }
-
-  .tv-opt-btn {
-    padding: 10px 12px;
-    font-size: 0.86rem;
-  }
-
-  .tv-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
 
   /* AI Coach Column */
   .ai-chat-header {

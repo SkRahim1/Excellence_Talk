@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome, Student! | Excellence Talk Student Portal</title>
+  <meta name="description" content="Welcome, Student! Your English learning journey starts here. Practice spoken English with 24/7 AI speech coaching, weekly grade-wise lessons, sentence builder, and fun learning games.">
+  <meta name="theme-color" content="#0084FF">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans (Matches Excellence Talk Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="canonical" href="https://excellencetalk.in/students/">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar with Link Back to Main Website -->
+  <header class="portal-topbar">
+    <div class="topbar-content">
+      <a href="../index.html" class="topbar-back-link" title="Return to main Excellence Talk website">
+        <span>← Back to Excellence Talk Website</span>
+      </a>
+      <div class="topbar-tagline">
+        <span class="topbar-badge">Official Portal</span>
+        <span>Phygital Spoken English & Confidence Learning Ecosystem</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation Bar -->
+  <nav class="portal-navbar">
+    <div class="nav-container">
+      <!-- Brand Logo & Portal Name -->
+      <div class="brand-section">
+        <a href="../index.html">
+          <img src="assets/logo.png" alt="Excellence Talk Logo" class="brand-logo-img">
+        </a>
+        <div class="brand-title-wrap">
+          <span class="brand-title">Excellence Talk</span>
+          <span class="brand-subtitle">Student Learning Portal</span>
+        </div>
+      </div>
+
+      <!-- Grade Level Selector Dropdown -->
+      <div class="grade-selector-wrap" title="Change your grade level curriculum">
+        <span class="grade-label">Grade:</span>
+        <select id="grade-selector" class="grade-select" aria-label="Select Grade Level">
+          <option value="grade-1-2">Grades 1–2 (Early Explorers: Talk & Wonder)</option>
+          <option value="grade-3-5" selected>Grades 3–5 (Confident Communicators: Talk & Tell)</option>
+          <option value="grade-6-8">Grades 6–8 (Fluent Speakers: Talk & Connect)</option>
+          <option value="grade-9-10">Grades 9–10 (Persuasive Leaders: Talk & Lead)</option>
+          <option value="college">College / Higher Ed (Global Professionals)</option>
+        </select>
+      </div>
+
+      <!-- Student Stats & Profile -->
+      <div class="user-profile-bar">
+        <div class="streak-chip" title="Daily speaking practice streak">
+          <span class="fire-icon">🔥</span>
+          <span id="streak-counter">5 Days</span>
+        </div>
+
+        <div class="xp-chip" title="Total Stars & Experience Points">
+          <span>⭐</span>
+          <span id="xp-counter">420 XP</span>
+        </div>
+
+        <button class="student-avatar-btn" id="btn-edit-student" title="Edit Student Profile">
+          <div class="avatar-bubble" id="avatar-icon">🚀</div>
+          <span class="student-name-text" id="student-name-display">Aryan</span>
+        </button>
+
+        <button class="btn-sound-toggle" id="btn-sound-toggle" title="Toggle audio effects">
+          <span id="sound-icon">🔊</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Welcome Banner -->
+  <section class="student-hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="hero-pill-badge">
+          <span>🌟</span>
+          <span id="hero-badge-level">Level 2: Development</span>
+          <span>•</span>
+          <span id="hero-book-theme">Book: Talk & Tell</span>
+        </div>
+        
+        <!-- User's exact prompt headings -->
+        <h1 class="hero-title">Welcome, Student!</h1>
+        <h2 class="hero-subtitle">Your English learning journey</h2>
+        <p class="hero-desc">
+          Speak without fear every single day. Master sentence patterns, practice pronunciation 1-on-1 with your private AI coach, complete your book homework, and unlock champion badges!
+        </p>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-card">
+            <span class="stat-card-label">Weekly Lessons</span>
+            <div class="stat-card-value" id="stat-lessons-count">4 <span class="stat-card-unit">Chapters</span></div>
+          </div>
+          <div class="hero-stat-card">
+            <span class="stat-card-label">Speaking Time</span>
+            <div class="stat-card-value">48 <span class="stat-card-unit">mins this week</span></div>
+          </div>
+          <div class="hero-stat-card">
+            <span class="stat-card-label">Fluency Index</span>
+            <div class="stat-card-value" id="stat-fluency-rate">88% <span class="stat-card-unit">Confidence</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Speaking Challenge Box -->
+      <div class="daily-challenge-box">
+        <div class="daily-header">
+          <span class="daily-tag">⚡ Daily Quest</span>
+          <span class="daily-reward">+30 Star XP</span>
+        </div>
+        <h3 class="daily-title">Today's 30-Sec Speaking Challenge</h3>
+        <p class="daily-prompt-text" id="daily-prompt-text">
+          "Introduce your favorite hobby and explain why it makes you feel energized!"
+        </p>
+        <button class="btn-start-daily" id="btn-start-daily-quest">
+          <span>🎙️ Start Speaking Challenge</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Module Navigation Tabs -->
+  <div class="module-tabs-strip">
+    <div class="tabs-container" role="tablist">
+      <button class="module-tab-btn active" data-view="dashboard" role="tab" aria-selected="true">
+        <span class="tab-icon">🏠</span>
+        <span>Dashboard</span>
+      </button>
+
+      <!-- 1. My Lessons -->
+      <button class="module-tab-btn" data-view="lessons" role="tab" aria-selected="false">
+        <span class="tab-icon">📚</span>
+        <span>My Lessons</span>
+        <span class="tab-badge" id="badge-tab-lessons">4</span>
+      </button>
+
+      <!-- 2. Speak with AI -->
+      <button class="module-tab-btn" data-view="speak-ai" role="tab" aria-selected="false">
+        <span class="tab-icon">🎙️</span>
+        <span>Speak with AI</span>
+        <span class="tab-badge">24/7</span>
+      </button>
+
+      <!-- 3. Sentence Builder -->
+      <button class="module-tab-btn" data-view="sentence-builder" role="tab" aria-selected="false">
+        <span class="tab-icon">🧩</span>
+        <span>Sentence Builder</span>
+      </button>
+
+      <!-- 4. Homework -->
+      <button class="module-tab-btn" data-view="homework" role="tab" aria-selected="false">
+        <span class="tab-icon">📝</span>
+        <span>Homework</span>
+        <span class="tab-badge" id="badge-tab-hw">1 Due</span>
+      </button>
+
+      <!-- 5. Learning Games -->
+      <button class="module-tab-btn" data-view="games" role="tab" aria-selected="false">
+        <span class="tab-icon">🎮</span>
+        <span>Learning Games</span>
+      </button>
+
+      <!-- 6. My Progress -->
+      <button class="module-tab-btn" data-view="progress" role="tab" aria-selected="false">
+        <span class="tab-icon">🏆</span>
+        <span>My Progress</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content Areas for the 6 Sections -->
+  <main class="portal-main-content">
+
+    <!-- ====================================================================
+         VIEW 0: Dashboard Overview (Displays cards for all 6 core modules)
+         ==================================================================== -->
+    <section id="view-dashboard" class="portal-view active-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>🚀</span> Student Learning Hub</h2>
+          <p class="view-subtitle">Select any module below to begin your daily spoken English practice.</p>
+        </div>
+        <span class="view-header-badge" id="dash-curriculum-badge">Curriculum: Grades 3–5</span>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- 1. My Lessons Card -->
+        <div class="module-card card-lessons">
+          <div class="card-top">
+            <div class="module-icon-box icon-lessons">📚</div>
+            <span class="module-counter-badge">Weekly Grade-Wise</span>
+          </div>
+          <h3 class="module-title">My Lessons</h3>
+          <p class="module-desc">Weekly grade-wise lessons synced with your curriculum workbook chapters, audio dialogues, and vocabulary drills.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> 4 Structured weekly chapters</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Native pronunciation audio</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Key communicative sentence frames</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('lessons')">
+            <span>Explore Lessons</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 2. Speak with AI Card -->
+        <div class="module-card card-speak-ai">
+          <div class="card-top">
+            <div class="module-icon-box icon-ai">🎙️</div>
+            <span class="module-counter-badge">24/7 Practice</span>
+          </div>
+          <h3 class="module-title">Speak with AI</h3>
+          <p class="module-desc">Pronunciation and speaking coach with instant voice evaluation, fluency metrics, and judgment-free feedback.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Real-time voice microphone test</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Pronunciation & clarity scoring</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Audio model pronunciation response</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('speak-ai')">
+            <span>Start AI Speaking</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 3. Sentence Builder Card -->
+        <div class="module-card card-sentence">
+          <div class="card-top">
+            <div class="module-icon-box icon-sentence">🧩</div>
+            <span class="module-counter-badge">Grammar & Syntax</span>
+          </div>
+          <h3 class="module-title">Sentence Builder</h3>
+          <p class="module-desc">Construct better sentences with interactive word scramble tiles, connector training, and syntax feedback.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Tap & arrange scrambled words</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Learn natural English word order</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Earn bonus Star XP for accuracy</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('sentence-builder')">
+            <span>Build Sentences</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 4. Homework Card -->
+        <div class="module-card card-homework">
+          <div class="card-top">
+            <div class="module-icon-box icon-homework">📝</div>
+            <span class="module-counter-badge" id="dash-hw-badge">1 Pending</span>
+          </div>
+          <h3 class="module-title">Homework</h3>
+          <p class="module-desc">Assigned practice and projects directly aligned with your workbook exercises and teacher reviews.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Audio voice notes & reading tasks</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Book page & activity mappings</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Teacher feedback & 5-star ratings</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('homework')">
+            <span>Open Homework</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 5. Learning Games Card -->
+        <div class="module-card card-games">
+          <div class="card-top">
+            <div class="module-icon-box icon-games">🎮</div>
+            <span class="module-counter-badge">Fun Quizzes</span>
+          </div>
+          <h3 class="module-title">Learning Games</h3>
+          <p class="module-desc">Vocabulary and grammar games including flashcard speed-match, grammar pops, and tongue twisters.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> 3D Vocabulary Flashcards</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Speed Grammar Pop Quiz</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Tongue Twister Enunciation Race</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('games')">
+            <span>Play Games</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 6. My Progress Card -->
+        <div class="module-card card-progress">
+          <div class="card-top">
+            <div class="module-icon-box icon-progress">🏆</div>
+            <span class="module-counter-badge">Achievements</span>
+          </div>
+          <h3 class="module-title">My Progress</h3>
+          <p class="module-desc">Skills and achievements overview tracking fluency, pronunciation, grammar, badges, and certificates.</p>
+          <div class="card-meta-list">
+            <div class="card-meta-item"><span class="meta-bullet">●</span> 4 Core Spoken English Metrics</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Unlockable Champion Badges</div>
+            <div class="card-meta-item"><span class="meta-bullet">●</span> Printable Achievement Certificate</div>
+          </div>
+          <button class="btn-card-action" onclick="switchView('progress')">
+            <span>View Progress</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 1: My Lessons (Weekly grade-wise lessons)
+         ==================================================================== -->
+    <section id="view-lessons" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>📚</span> My Lessons</h2>
+          <p class="view-subtitle">Weekly grade-wise lessons synced with your curriculum workbook chapters.</p>
+        </div>
+        <div class="book-tag">
+          <span>📖 Official Curriculum:</span>
+          <strong id="lessons-book-title">Talk & Tell (Grades 3–5)</strong>
+        </div>
+      </div>
+
+      <!-- Current Level Banner -->
+      <div class="curriculum-banner">
+        <div>
+          <h3 class="curriculum-banner-title" id="curriculum-banner-title">Talk & Tell • Confident Communicators</h3>
+          <p class="curriculum-banner-sub" id="curriculum-banner-sub">Focus: Storytelling, sentence syntax, daily situational dialogues & roleplays</p>
+        </div>
+        <button class="btn-start-daily" style="width: auto;" onclick="openLessonModal(0)">
+          <span>▶️ Continue Current Week</span>
+        </button>
+      </div>
+
+      <!-- Weekly Lessons Grid -->
+      <div class="lessons-grid" id="lessons-cards-container">
+        <!-- Rendered dynamically by app.js from CURRICULUM_DATA -->
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 2: Speak with AI (Pronunciation and speaking)
+         ==================================================================== -->
+    <section id="view-speak-ai" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>🎙️</span> Speak with AI</h2>
+          <p class="view-subtitle">Pronunciation and speaking coach. Practice speaking aloud in a private, judgment-free environment.</p>
+        </div>
+        <span class="view-header-badge">AI Speech Engine Active</span>
+      </div>
+
+      <div class="speak-ai-container">
+        <!-- Main Speaking Stage -->
+        <div class="speech-practice-card">
+          <div class="coach-header">
+            <div class="coach-avatar">🤖</div>
+            <div class="coach-meta">
+              <h3>Alex • Excellence AI Voice Coach</h3>
+              <div class="coach-status-online">
+                <span class="status-dot"></span>
+                <span>Ready to listen and evaluate your pronunciation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prompt Challenge Card -->
+          <div class="prompt-display-card">
+            <div class="prompt-card-badge">Current Speaking Challenge</div>
+            <h4 class="prompt-challenge-text" id="ai-active-prompt">
+              "Tell me about your favorite toy. What color is it and why do you like it?"
+            </h4>
+            <div class="sample-answer-box">
+              <span style="font-weight:700; color:var(--primary); font-size:0.85rem;">Sample:</span>
+              <span id="ai-active-sample">"My favorite toy is a red toy car. It goes very fast and makes me laugh!"</span>
+              <button class="btn-listen-sample" id="btn-listen-sample" title="Listen to sample audio">
+                <span>🔊 Listen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Mic Button Area -->
+          <div class="mic-interactive-stage">
+            <button class="mic-btn-main" id="btn-mic-toggle" title="Click to start speaking">
+              <span id="mic-icon">🎙️</span>
+            </button>
+            <div class="mic-instruction-text" id="mic-status-label">
+              Click the microphone and speak aloud
+            </div>
+            <div class="mic-subtext" id="mic-subtext-label">
+              Speak clearly into your device microphone
+            </div>
+
+            <!-- Visual waveform bars -->
+            <div class="audio-waves-wrap" id="waveform-wrap">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+          </div>
+
+          <!-- Speech Analysis & Results Card -->
+          <div class="speech-result-box" id="speech-result-box">
+            <div class="transcript-header">
+              <span class="transcript-label">What the AI Heard:</span>
+              <button class="btn-listen-sample" id="btn-replay-user-speech">🔊 Hear Playback</button>
+            </div>
+            <div class="transcript-text" id="user-transcript-display">
+              "Yesterday I conducted an exciting experiment in the science club."
+            </div>
+
+            <div class="score-breakdown-row">
+              <div class="score-meter-card">
+                <div class="score-meter-title">Pronunciation</div>
+                <div class="score-meter-value" id="score-pronunciation" style="color:#0084FF;">92%</div>
+              </div>
+              <div class="score-meter-card">
+                <div class="score-meter-title">Fluency & Pace</div>
+                <div class="score-meter-value" id="score-fluency" style="color:#10B981;">89%</div>
+              </div>
+              <div class="score-meter-card">
+                <div class="score-meter-title">Grammar & Syntax</div>
+                <div class="score-meter-value" id="score-grammar" style="color:#8B5CF6;">95%</div>
+              </div>
+            </div>
+
+            <div class="ai-feedback-banner">
+              <span class="ai-feedback-icon">🌟</span>
+              <div class="ai-feedback-text" id="ai-feedback-text">
+                "Outstanding articulation! Your pronunciation of multi-syllable words was crisp and your speech rhythm was confident."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Selection Sidebar -->
+        <aside class="prompts-sidebar">
+          <h3 class="sidebar-title">Select Practice Topic</h3>
+          <div class="prompts-list" id="ai-prompts-list">
+            <!-- Rendered by app.js -->
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 3: Sentence Builder (Construct better sentences)
+         ==================================================================== -->
+    <section id="view-sentence-builder" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>🧩</span> Sentence Builder</h2>
+          <p class="view-subtitle">Construct better sentences. Tap words in order to form fluent, grammatical sentences.</p>
+        </div>
+        <span class="view-header-badge" id="sb-score-badge">Level 1 of 4</span>
+      </div>
+
+      <div class="sentence-builder-stage">
+        <div class="sb-header">
+          <span class="sb-level-tag" id="sb-round-tag">Puzzle 1 of 4</span>
+          <span style="font-weight:700; color:#CA8A04;">⭐ +25 XP per correct sentence</span>
+        </div>
+
+        <p class="sb-instructions">Tap or click words from the bank below to construct the correct spoken English sentence:</p>
+        <div class="sb-hint-box" id="sb-hint-text">
+          💡 Hint: Subject + verb + adjective + noun + time expression.
+        </div>
+
+        <!-- Target Construction Slot -->
+        <div class="sb-target-container" id="sb-target-container">
+          <div class="sb-target-placeholder" id="sb-target-placeholder">
+            Click words from below to place them here...
+          </div>
+        </div>
+
+        <!-- Word Bank -->
+        <div class="word-tiles-bank" id="sb-word-bank">
+          <!-- Dynamically populated word tiles -->
+        </div>
+
+        <!-- Action Bar -->
+        <div class="sb-action-bar">
+          <div class="sb-secondary-btns">
+            <button class="btn-sb-secondary" id="btn-sb-reset">🔄 Reset Words</button>
+            <button class="btn-sb-secondary" id="btn-sb-audio">🔊 Hear Hint</button>
+          </div>
+          <button class="btn-check-sentence" id="btn-sb-check">
+            <span>✓ Check Sentence</span>
+          </button>
+        </div>
+
+        <!-- Feedback Alert -->
+        <div class="sb-feedback-alert" id="sb-feedback-alert">
+          <strong id="sb-feedback-title">Brilliant!</strong>
+          <span id="sb-feedback-msg">Your sentence is grammatically flawless and sounds natural.</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 4: Homework (Assigned practice and projects)
+         ==================================================================== -->
+    <section id="view-homework" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>📝</span> Homework</h2>
+          <p class="view-subtitle">Assigned practice and projects synchronized with your printed textbook.</p>
+        </div>
+        <span class="view-header-badge">Teacher Sync Connected</span>
+      </div>
+
+      <div class="homework-tabs-sub">
+        <button class="subtab-btn active" data-hw-filter="all">All Assignments</button>
+        <button class="subtab-btn" data-hw-filter="pending">Pending</button>
+        <button class="subtab-btn" data-hw-filter="completed">Completed & Reviewed</button>
+      </div>
+
+      <div class="homework-list" id="homework-items-container">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 5: Learning Games (Vocabulary and grammar games)
+         ==================================================================== -->
+    <section id="view-games" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>🎮</span> Learning Games</h2>
+          <p class="view-subtitle">Vocabulary and grammar games designed to make speech fluency playful and memorable.</p>
+        </div>
+        <span class="view-header-badge">Earn Champion XP</span>
+      </div>
+
+      <div class="games-hub-grid">
+        <!-- Game 1: 3D Flashcard Explorer -->
+        <div class="game-hub-card">
+          <div class="game-icon-circle game-icon-vocab">🗂️</div>
+          <h3 class="game-card-title">3D Vocabulary Flashcards</h3>
+          <p class="game-card-desc">Flip interactive cards to discover advanced speaking words, phonetics, definitions, and real contextual examples.</p>
+          <button class="btn-launch-game btn-launch-pink" onclick="openGameModal('flashcards')">
+            <span>Play Flashcards</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- Game 2: Speed Grammar Pop -->
+        <div class="game-hub-card">
+          <div class="game-icon-circle game-icon-grammar">⚡</div>
+          <h3 class="game-card-title">Speed Grammar Pop</h3>
+          <p class="game-card-desc">Rapid-fire spoken grammar quiz! Identify polite sentence frames, past tense verbs, and debate discourse markers.</p>
+          <button class="btn-launch-game btn-launch-purple" onclick="openGameModal('grammar')">
+            <span>Play Grammar Pop</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- Game 3: Tongue Twister Sprint -->
+        <div class="game-hub-card">
+          <div class="game-icon-circle game-icon-twister">🌪️</div>
+          <h3 class="game-card-title">Tongue Twister Sprint</h3>
+          <p class="game-card-desc">Sharpen your articulators, tongue placement, and plosive sounds with fun cadence tongue twisters.</p>
+          <button class="btn-launch-game btn-launch-amber" onclick="openGameModal('twister')">
+            <span>Play Twister Sprint</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 6: My Progress (Skills and achievements)
+         ==================================================================== -->
+    <section id="view-progress" class="portal-view">
+      <div class="view-header">
+        <div class="view-title-wrap">
+          <h2><span>🏆</span> My Progress</h2>
+          <p class="view-subtitle">Skills and achievements tracker. Watch your confidence and fluency index climb week after week.</p>
+        </div>
+        <span class="view-header-badge">CEFR Level: B1 (Progressing to B2)</span>
+      </div>
+
+      <!-- Metric Highlights -->
+      <div class="progress-top-summary">
+        <div class="progress-metric-box">
+          <div class="metric-circle-icon" style="background:#E0F2FE; color:#0284C7;">⏱️</div>
+          <div class="metric-data">
+            <h4 id="prog-time-total">3.8 hrs</h4>
+            <p>Total Speaking Practice</p>
+          </div>
+        </div>
+
+        <div class="progress-metric-box">
+          <div class="metric-circle-icon" style="background:#DCFCE7; color:#15803D;">📖</div>
+          <div class="metric-data">
+            <h4 id="prog-completed-lessons">7 / 16</h4>
+            <p>Book Chapters Mastered</p>
+          </div>
+        </div>
+
+        <div class="progress-metric-box">
+          <div class="metric-circle-icon" style="background:#FEF3C7; color:#B45309;">🔥</div>
+          <div class="metric-data">
+            <h4>5 Days</h4>
+            <p>Active Practice Streak</p>
+          </div>
+        </div>
+
+        <div class="progress-metric-box">
+          <div class="metric-circle-icon" style="background:#F3E8FF; color:#7E22CE;">⭐</div>
+          <div class="metric-data">
+            <h4 id="prog-total-xp">420 XP</h4>
+            <p>Earned Star Points</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Progress Bars -->
+      <div class="skills-breakdown-card">
+        <h3 style="font-size:1.3rem; margin-bottom: 20px; color:var(--navy-dark);">Core Speaking Competencies</h3>
+        
+        <div class="skill-bar-row">
+          <div class="skill-bar-header">
+            <span>Fluency & Cadence</span>
+            <span style="color:var(--primary);">88%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill fill-fluency" style="width: 88%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-row">
+          <div class="skill-bar-header">
+            <span>Pronunciation & Enunciation</span>
+            <span style="color:var(--purple);">84%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill fill-pronunciation" style="width: 84%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-row">
+          <div class="skill-bar-header">
+            <span>Grammar & Sentence Construction</span>
+            <span style="color:var(--secondary);">91%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill fill-grammar" style="width: 91%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-row">
+          <div class="skill-bar-header">
+            <span>Vocabulary Richness</span>
+            <span style="color:var(--accent);">95%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill fill-vocab" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badges Showcase -->
+      <div class="badges-section">
+        <h3 style="font-size:1.3rem; color:var(--navy-dark);">Earned Badges & Honors</h3>
+        <p style="font-size:0.9rem; color:var(--slate-500); margin-top:2px;">Complete lessons, sentence builders, and speech sessions to unlock badges.</p>
+
+        <div class="badges-grid">
+          <div class="badge-item unlocked">
+            <div class="badge-icon">🦁</div>
+            <div class="badge-name">First Words</div>
+            <div class="badge-condition">Completed 1st speaking session</div>
+          </div>
+
+          <div class="badge-item unlocked">
+            <div class="badge-icon">🔥</div>
+            <div class="badge-name">5-Day Streaker</div>
+            <div class="badge-condition">Spoke 5 days continuously</div>
+          </div>
+
+          <div class="badge-item unlocked">
+            <div class="badge-icon">🧩</div>
+            <div class="badge-name">Syntax Master</div>
+            <div class="badge-condition">Constructed 10 perfect sentences</div>
+          </div>
+
+          <div class="badge-item unlocked">
+            <div class="badge-icon">🎙️</div>
+            <div class="badge-name">Fearless Speaker</div>
+            <div class="badge-condition">Scored 90%+ on AI speech</div>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-icon">👑</div>
+            <div class="badge-name">Orator of the Month</div>
+            <div class="badge-condition">Score 1000 XP in a month</div>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-icon">🌟</div>
+            <div class="badge-name">Debate Champion</div>
+            <div class="badge-condition">Finish Level 3 or 4 curriculum</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Promotion Banner -->
+      <div class="certificate-promo-banner">
+        <div class="cert-banner-text">
+          <h3>Excellence Talk Certificate of Spoken English</h3>
+          <p>Download your verified student achievement certificate certified by Excellence Talk Systems.</p>
+        </div>
+        <button class="btn-generate-cert" onclick="openCertificateModal()">
+          <span>🎓 View & Print Certificate</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ====================================================================
+       MODAL 1: Lesson Detail Viewer
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-lesson-detail">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-lesson-title">Lesson Details</h3>
+        <button class="btn-close-modal" onclick="closeModal('modal-lesson-detail')">✕</button>
+      </div>
+      <div class="modal-body" id="modal-lesson-body">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================
+       MODAL 2: Interactive Games Modal
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-game">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-game-title">Learning Game</h3>
+        <button class="btn-close-modal" onclick="closeModal('modal-game')">✕</button>
+      </div>
+      <div class="modal-body" id="modal-game-body">
+        <!-- Rendered dynamically for Flashcards, Grammar Pop, or Twister -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================
+       MODAL 3: Homework Submission Modal
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-homework-submit">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-hw-title">Submit Homework</h3>
+        <button class="btn-close-modal" onclick="closeModal('modal-homework-submit')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="modal-hw-desc" style="margin-bottom:16px; font-weight:600; color:var(--navy-dark);"></p>
+        
+        <div style="background:var(--slate-50); border:1px solid var(--slate-200); border-radius:var(--radius-md); padding:18px; margin-bottom:18px; text-align:center;">
+          <button class="mic-btn-main" id="btn-hw-record-mic" style="width:70px; height:70px; font-size:1.8rem; margin-bottom:10px;">
+            <span>🎙️</span>
+          </button>
+          <div style="font-weight:700; color:var(--navy-dark);" id="hw-mic-status">Tap to Record Voice Homework</div>
+          <span style="font-size:0.8rem; color:var(--slate-500);">Or type your notes below:</span>
+        </div>
+
+        <textarea id="hw-submission-text" placeholder="Type your answers, thoughts or dialogue notes here..." rows="4" style="width:100%; border:1px solid var(--slate-300); border-radius:var(--radius-md); padding:12px; font-family:var(--font-body); font-size:0.95rem; margin-bottom:18px;"></textarea>
+
+        <button class="btn-start-daily" id="btn-confirm-submit-hw" style="width:100%;">
+          <span>🚀 Submit to Teacher</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================
+       MODAL 4: Printable Certificate of Achievement
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-certificate">
+    <div class="modal-dialog" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Certificate of Spoken English Mastery</h3>
+        <button class="btn-close-modal" onclick="closeModal('modal-certificate')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="cert-canvas-wrap" id="printable-certificate">
+          <img src="assets/logo.png" alt="Excellence Talk Logo" class="cert-logo">
+          <h2 class="cert-main-title">Certificate of Achievement</h2>
+          <div class="cert-sub">Excellence Talk Phygital Spoken English Ecosystem</div>
+          
+          <div class="cert-awarded-to">This is proudly awarded to</div>
+          <div class="cert-student-name" id="cert-name-field">Aryan Sharma</div>
+          <div class="cert-reason" id="cert-reason-field">
+            For outstanding dedication, consistent daily practice, and commendable speech confidence in the <strong>Talk & Tell</strong> Spoken English Curriculum.
+          </div>
+
+          <div class="cert-signatures">
+            <div class="cert-sig-block">
+              <div class="sig-line">Academic Director</div>
+              <div class="sig-name">Lead Trainer & Educator<br>Excellence Talk</div>
+            </div>
+            <div class="cert-sig-block">
+              <div class="sig-line">Official Certification</div>
+              <div class="sig-name">Verified Level Completion<br>Date: <span id="cert-date-field">November 2026</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+          <button class="btn-sb-secondary" onclick="closeModal('modal-certificate')">Close</button>
+          <button class="btn-start-daily" style="width:auto;" onclick="window.print()">
+            <span>🖨️ Print / Save PDF</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================
+       MODAL 5: Student Profile Edit
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-profile">
+    <div class="modal-dialog" style="max-width:440px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Student Profile</h3>
+        <button class="btn-close-modal" onclick="closeModal('modal-profile')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-weight:700; margin-bottom:6px; color:var(--navy-dark);">Student Name:</label>
+          <input type="text" id="input-student-name" value="Aryan" style="width:100%; padding:10px 14px; border:1px solid var(--slate-300); border-radius:var(--radius-sm); font-size:1rem; font-family:var(--font-body);">
+        </div>
+
+        <div style="margin-bottom:24px;">
+          <label style="display:block; font-weight:700; margin-bottom:6px; color:var(--navy-dark);">Choose Your Avatar:</label>
+          <div style="display:flex; gap:10px; font-size:1.8rem;">
+            <button class="avatar-opt-btn" onclick="selectAvatar('🚀')">🚀</button>
+            <button class="avatar-opt-btn" onclick="selectAvatar('🦁')">🦁</button>
+            <button class="avatar-opt-btn" onclick="selectAvatar('⚡')">⚡</button>
+            <button class="avatar-opt-btn" onclick="selectAvatar('👑')">👑</button>
+            <button class="avatar-opt-btn" onclick="selectAvatar('🎓')">🎓</button>
+            <button class="avatar-opt-btn" onclick="selectAvatar('💼')">💼</button>
+          </div>
+        </div>
+
+        <button class="btn-start-daily" style="width:100%;" onclick="saveProfile()">
+          <span>Save Changes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Portal Footer -->
+  <footer class="portal-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="font-weight:800; font-size:1.2rem; color:var(--white);">Excellence Talk | Students Portal</div>
+        <p style="color:#94A3B8; font-size:0.9rem;">Empowering every school & college student to speak fluent English without fear.</p>
+      </div>
+
+      <div>
+        <a href="../index.html" style="color:#93C5FD; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+          <span>← Back to Main Excellence Talk Website</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 Excellence Talk Systems. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="lessons-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

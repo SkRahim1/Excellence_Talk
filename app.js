@@ -3,18 +3,18 @@
 // 1. Data Store for 6-Step Loop
 const loopStepsData = {
   1: {
-    title: "Step 1: Read (Printed Book)",
-    action: "Physical Learning Anchor",
-    desc: "Every student opens their physical grade-wise textbook. In Chapter 4 'Daily Routines', students are introduced to 15 key action verbs, temporal transition words (first, subsequently, meanwhile), and a full-color comic dialogue between two students planning their study schedule.",
+    title: "Step 1: Read (Curriculum Workbook)",
+    action: "Structured Learning Anchor",
+    desc: "Every student opens their grade-wise chapter workbook. In Chapter 4 'Daily Routines', students are introduced to 15 key action verbs, temporal transition words (first, subsequently, meanwhile), and a full-color comic dialogue between two students planning their study schedule.",
     features: [
-      "Zero screen fatigue; high-focus tactile reading",
+      "High-focus reading with structured phonetic pronunciation cues",
       "Vocabulary builder with clear pronunciation phonetic guides",
       "Illustrated story context depicting age-appropriate situations",
       "QR code at the top linking to the accompanying digital audio track"
     ],
     previewHtml: `
       <div class="loop-visual-preview">
-        <span class="preview-badge">Printed Book Page 36</span>
+        <span class="preview-badge">Curriculum Workbook Page 36</span>
         <h4 style="margin-bottom:8px; color:#1E429F;">📖 Unit 2 • Chapter 4: Daily Routines</h4>
         <p style="font-size:0.9rem; color:#4B5563; margin-bottom:12px;"><em>"Aarav wakes up at dawn. Before leaving for school, he prepares his timetable..."</em></p>
         <div style="background:#F3F4F6; padding:10px; border-radius:6px; font-size:0.85rem; margin-bottom:10px;">
@@ -52,20 +52,20 @@ const loopStepsData = {
     `
   },
   3: {
-    title: "Step 3: Learn Together (Classroom Smart TV Mode)",
+    title: "Step 3: Learn Together (Classroom Speaking Drills)",
     action: "Social Energy & Gamified Mastery",
-    desc: "The teacher switches on Classroom Mode on the projector or interactive flat panel. The screen syncs directly with Chapter 4, launching whole-class games, pronunciation choruses, and rapid-fire sentence ordering competitions.",
+    desc: "The teacher conducts engaging speaking drills directly in the classroom. Synchronized with Chapter 4, students participate in paired roleplays, pronunciation choruses, and rapid-fire sentence ordering relays.",
     features: [
       "Teacher follows the ready-to-run 45-minute lesson structure",
       "Multiplayer games: Room split into Team Alpha & Team Bravo",
       "Auditory reinforcement with native speaker pronunciation models",
-      "No teacher lesson prep overhead required"
+      "Works in any classroom with zero technology setup required"
     ],
     previewHtml: `
       <div class="loop-visual-preview" style="background:#0F172A; color:#fff; border-color:#334155;">
-        <span class="preview-badge" style="background:#1E3A8A; color:#93C5FD;">Smart TV Display</span>
-        <h4 style="color:#60A5FA; margin-bottom:8px;">📺 Team Challenge: Sentence Scramble</h4>
-        <p style="font-size:0.85rem; color:#CBD5E1; margin-bottom:12px;">Rearrange the tiles before the 30s buzzer rings:</p>
+        <span class="preview-badge" style="background:#1E3A8A; color:#93C5FD;">Classroom Speaking Activity</span>
+        <h4 style="color:#60A5FA; margin-bottom:8px;">🗣️ Team Challenge: Sentence Scramble Relay</h4>
+        <p style="font-size:0.85rem; color:#CBD5E1; margin-bottom:12px;">Rearrange the word cards before the 30s timer rings:</p>
         <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;">
           <span style="background:#374151; padding:4px 8px; border-radius:4px; font-size:0.8rem;">[breakfast]</span>
           <span style="background:#374151; padding:4px 8px; border-radius:4px; font-size:0.8rem;">[eats]</span>
@@ -194,7 +194,7 @@ const curriculumData = {
       { title: "Phonics & Sound Blends", items: ["Consonant blends (bl, cl, st)", "Vowel digraphs (ea, ee, oo)", "Phonetic rhyming songs"] },
       { title: "Everyday Vocabulary", items: ["Animals, colors & clothing", "Classroom & family items", "Action verbs (jump, read, eat)"] },
       { title: "Sentence Starters", items: ["'This is a...'", "'I like to...'", "'Can I please have...'"] },
-      { title: "Classroom & AI Drills", items: ["Echo singing on smart TV", "AI animal sound mimicry", "Show & Tell with toy"] }
+      { title: "Classroom & AI Drills", items: ["Echo singing & phonics rhymes", "AI animal sound mimicry", "Show & Tell with toy"] }
     ]
   },
   g35: {
@@ -222,7 +222,7 @@ const curriculumData = {
       { title: "Communicative Grammar", items: ["Conditionals (If I had... I would)", "Active vs. Passive for impact", "Discourse transition markers"] },
       { title: "Descriptive Mastery", items: ["Reviewing books & movies", "Explaining scientific inventions", "Painting pictures with words"] },
       { title: "Structured Discussions", items: ["Expressing agreement & polite disagreement", "Summarizing peer points", "Turn-taking etiquette"] },
-      { title: "Classroom & AI Drills", items: ["Smart TV live polls & rapid debate", "AI spontaneous 60s speech timer", "Live parliamentary mini-debate"] }
+      { title: "Classroom & AI Drills", items: ["Classroom rapid debate & sentence relays", "AI spontaneous 60s speech timer", "Live parliamentary mini-debate"] }
     ]
   },
   g910: {
@@ -236,7 +236,7 @@ const curriculumData = {
       { title: "Rhetoric & Public Speaking", items: ["Monroe's Motivated Sequence", "Vocal variety & pause control", "Audience emotional engagement"] },
       { title: "Debate Formats", items: ["British Parliamentary debate rules", "Rebuttal strategies & refutation", "Fact checking & argument logic"] },
       { title: "Interview Foundations", items: ["Self-introduction elevator pitch", "STAR method for behavioral questions", "Professional body language"] },
-      { title: "Classroom & AI Drills", items: ["Smart TV balloon debate simulation", "Adversarial counter-point AI coach", "Live Model UN & elocution showcase"] }
+      { title: "Classroom & AI Drills", items: ["Classroom balloon debate simulation", "Adversarial counter-point AI coach", "Live Model UN & elocution showcase"] }
     ]
   },
   college: {
@@ -250,7 +250,7 @@ const curriculumData = {
       { title: "Group Discussion (GD) Mastery", items: ["Initiating with high-impact data", "Steering straying GDs back on track", "Synthesizing consensus conclusions"] },
       { title: "Interview Simulation", items: ["Deconstructing technical & HR questions", "Situational Judgment Questions (SJT)", "Salary negotiation & company culture"] },
       { title: "Corporate Communication", items: ["Executive slide pitching", "Crisp business memos & email etiquette", "Cross-cultural business nuance"] },
-      { title: "Classroom & AI Drills", items: ["Smart TV boardroom crisis simulation", "AI industry-specific mock interview bot", "Live 8-person GDs with HR master trainers"] }
+      { title: "Classroom & AI Drills", items: ["Classroom boardroom crisis simulation", "AI industry-specific mock interview bot", "Live 8-person GDs with HR master trainers"] }
     ]
   }
 };
@@ -318,59 +318,8 @@ function showGradeTab(gradeKey) {
   `;
 }
 
-// 3. Classroom Smart TV Simulator Logic
-let tvSlideStep = 1;
-function testTvOption(optionNum) {
-  const feedback = document.getElementById('tv-feedback-msg');
-  if (!feedback) return;
-
-  if (optionNum === 1) {
-    feedback.innerHTML = `<span style="color:#34D399; font-weight:bold;">✓ Excellent Choice!</span> "After I wake up..." correctly uses the subordinating conjunction. Team Alpha gains 15 points!`;
-    feedback.style.background = "rgba(16, 185, 129, 0.2)";
-  } else {
-    feedback.innerHTML = `<span style="color:#F87171; font-weight:bold;">✗ Not quite right:</span> Notice the time sequence. Try Option A for natural chronological order.`;
-    feedback.style.background = "rgba(239, 68, 68, 0.2)";
-  }
-}
-
-function resetTvSimulator() {
-  tvSlideStep = (tvSlideStep % 3) + 1;
-  const title = document.querySelector('.tv-slide-title');
-  const prompt = document.querySelector('.tv-slide-prompt');
-  const options = document.getElementById('tv-options');
-  const feedback = document.getElementById('tv-feedback-msg');
-
-  if (tvSlideStep === 1) {
-    title.textContent = "Team Sentence Relay: 'My Morning'";
-    prompt.textContent = "Choose the correct sequence to complete the dialogue:";
-    options.innerHTML = `
-      <button class="tv-opt-btn" onclick="testTvOption(1)">A. "After I wake up, I brush my teeth and eat breakfast."</button>
-      <button class="tv-opt-btn" onclick="testTvOption(2)">B. "I brush my teeth after eating before waking up."</button>
-      <button class="tv-opt-btn" onclick="testTvOption(3)">C. "Waking up I teeth brushed immediately."</button>
-    `;
-    feedback.textContent = "Select the most natural English sentence!";
-    feedback.style.background = "rgba(255, 255, 255, 0.05)";
-  } else if (tvSlideStep === 2) {
-    title.textContent = "Vocabulary Face-Off: 'Action Verbs'";
-    prompt.textContent = "Which word best completes: 'She always ______ her school bag before sleeping.'";
-    options.innerHTML = `
-      <button class="tv-opt-btn" onclick="testTvOption(2)">A. 'scrambles'</button>
-      <button class="tv-opt-btn" onclick="testTvOption(1)">B. 'packs and organizes' (from Book Page 39)</button>
-      <button class="tv-opt-btn" onclick="testTvOption(3)">C. 'forgets easily'</button>
-    `;
-    feedback.textContent = "Which option shows disciplined routine?";
-    feedback.style.background = "rgba(255, 255, 255, 0.05)";
-  } else {
-    title.textContent = "Whole-Class Pronunciation Chorus";
-    prompt.textContent = "Repeat after the audio track: 'Prioritize your commitments daily.'";
-    options.innerHTML = `
-      <button class="tv-opt-btn" onclick="testTvOption(1)">▶️ Play Master Audio Model (UK/US Neutral)</button>
-      <button class="tv-opt-btn" onclick="testTvOption(1)">🎙️ Start 10-Second Class Chorus Timer</button>
-    `;
-    feedback.textContent = "Listen closely to the syllable stress on 'pri-OR-i-tize'.";
-    feedback.style.background = "rgba(255, 255, 255, 0.05)";
-  }
-}
+// 3. Classroom Speaking Drill Framework (100% Hardware-Free)
+// Ready-to-run paired roleplays, debate relays & choral pronunciation prompts
 
 // 4. AI Speaking Coach Simulator
 function simulateSpeechTest(sampleType) {
@@ -428,7 +377,7 @@ function openModal(type) {
       <div class="section-tag">Sample Chapter Download</div>
       <h3 style="margin-bottom:8px; font-size:1.6rem;">Get the Grade 5 Evaluation Kit</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
-        Includes: (1) Printed Book Chapter 4 PDF, (2) Teacher's Companion Lesson Plan, and (3) Live QR link to test the AI Speaking scenario.
+        Includes: (1) Chapter 4 Curriculum Workbook PDF, (2) Teacher's Companion Lesson Plan, and (3) Live QR link to test the AI Speaking scenario.
       </p>
       <form onsubmit="submitLeadForm(event)">
         <div class="form-group">
@@ -460,7 +409,7 @@ function openModal(type) {
       <div class="section-tag">Institutional Demonstration</div>
       <h3 style="margin-bottom:8px; font-size:1.6rem;">Schedule a 30-Minute Walkthrough</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
-        See how physical books, Smart TV classroom mode, AI speech evaluation, and live trainer masterclasses operate together in your classrooms.
+        See how curriculum workbooks, classroom speaking drills, AI speech evaluation, and live trainer masterclasses operate together in your classrooms.
       </p>
       <form onsubmit="submitLeadForm(event)">
         <div class="form-group">

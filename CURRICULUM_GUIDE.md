@@ -8,11 +8,11 @@ This document establishes the curriculum architecture, chapter blueprints, and p
 
 ### Level 1: Early Explorers (Grades 1–2)
 - **Primary Goal**: Spoken confidence, phonemic awareness, vocabulary building, and basic functional communication.
-- **Printed Book Focus**:
+- **Curriculum Workbook Focus**:
   - Full-color illustrated phonics cards, sound blends, visual dictionaries.
   - Tracing and simple word/sentence filling exercises.
   - Rhymes, chants, and paired puppet/action dialogues.
-- **Classroom Smart TV Mode**:
+- **Teacher-Led Classroom Speaking Drills**:
   - Sound tap & echo games (e.g., tap the screen to hear sound blends).
   - Whole-class sing-alongs with bouncing subtitles.
   - Picture flashcard team races.
@@ -27,12 +27,12 @@ This document establishes the curriculum architecture, chapter blueprints, and p
 
 ### Level 2: Confident Communicators (Grades 3–5)
 - **Primary Goal**: Sentence syntax, storytelling, situational dialogues, and self-expression.
-- **Printed Book Focus**:
+- **Curriculum Workbook Focus**:
   - Chapter themes: *Daily Routines, My Neighborhood, The Science Fair, At the Market, Superheroes & Helpers*.
   - Sentence frames (e.g., "First, I... Next, I... Finally, I...").
   - Mini comic strip dialogues with speech bubbles to complete.
   - Peer roleplay cards.
-- **Classroom Smart TV Mode**:
+- **Teacher-Led Classroom Speaking Drills**:
   - Interactive dialogue brancher (students vote on what character says next).
   - Sentence scramble relay on the interactive board.
   - Timed picture description buzzer game.
@@ -47,11 +47,11 @@ This document establishes the curriculum architecture, chapter blueprints, and p
 
 ### Level 3: Fluent Speakers (Grades 6–8)
 - **Primary Goal**: Spontaneous conversational fluency, contextual grammar, structured opinions, and clear enunciation.
-- **Printed Book Focus**:
+- **Curriculum Workbook Focus**:
   - Chapter themes: *Environmental Dilemmas, Cultural Festivals, Inventions of Tomorrow, Healthy Living, Overcoming Challenges*.
   - Idioms, phrasal verbs, and discourse markers ("In my perspective...", "On the contrary...").
   - Reading passages followed by structured analytical speaking prompts.
-- **Classroom Smart TV Mode**:
+- **Teacher-Led Classroom Speaking Drills**:
   - Live opinion polling with instant screen debate topics.
   - Video comprehension stop-and-talk prompts.
   - Rapid-fire vocabulary quizzes with team leaderboards.
@@ -66,11 +66,11 @@ This document establishes the curriculum architecture, chapter blueprints, and p
 
 ### Level 4: Persuasive Leaders (Grades 9–10)
 - **Primary Goal**: Rhetorical devices, public speaking, structured argumentation, and introductory interview acumen.
-- **Printed Book Focus**:
+- **Curriculum Workbook Focus**:
   - Chapter themes: *Global Ethics, Digital Citizenship, Leadership Case Studies, Art of Negotiation, Career Horizons*.
   - Speech structure blueprints: Hook, Problem, Solution, Call to Action (Monroe's Motivated Sequence).
   - Formal vs. informal language register shifts.
-- **Classroom Smart TV Mode**:
+- **Teacher-Led Classroom Speaking Drills**:
   - Deconstruction of famous historical speeches with annotated subtitles.
   - Impromptu "Balloon Debate" rounds run by the interactive timer.
 - **AI Speaking Coach**:
@@ -104,16 +104,16 @@ This document establishes the curriculum architecture, chapter blueprints, and p
 Every chapter in the printed book maps to this reproducible 45-minute lesson blueprint:
 
 ```
-[00:00 - 00:08] 1. Hook & Warm-Up (Classroom Smart TV)
-- Animated teaser or controversial question projected on screen.
+[00:00 - 00:08] 1. Hook & Warm-Up (Teacher Speaking Prompt)
+- Animated teaser or controversial question delivered from Teacher Handbook.
 - Fast class-wide vocabulary activation (3 mins).
 
-[00:08 - 00:20] 2. Concept & Book Study (Printed Book)
-- Students open Book Chapter; teacher guides reading of dialogue and sentence frame.
-- Students write answers to Activity 1 & 2 in physical workbooks.
+[00:08 - 00:20] 2. Concept & Workbook Study (Curriculum Workbook)
+- Students open Chapter Workbook; teacher guides reading of dialogue and sentence frame.
+- Students write answers to Activity 1 & 2 in chapter workbooks.
 
-[00:20 - 00:32] 3. Interactive Class Drill (Classroom Smart TV)
-- Whole-group interactive team game / paired roleplay exercise using screen visual prompts.
+[00:20 - 00:32] 3. Interactive Class Drill (Paired Drills & Relays)
+- Whole-group interactive team game / paired roleplay exercise using Teacher Companion prompts.
 - Teacher circulates using presenter notes to assess struggling students.
 
 [00:32 - 00:40] 4. Synthesis & Micro-Presentations
@@ -133,9 +133,9 @@ When offering Excellence Talk to schools and colleges, cost clarity is critical:
 
 | Component | Cost Category | Typical Allocation | Notes |
 | :--- | :--- | :--- | :--- |
-| **Printed Student Book** | Direct COGS | Physical Production & Binding | High-grade paper, 160–200 pages, full color (K–8) or dual color (9–College). |
-| **Packaging & Logistics** | Fulfillment COGS | Delivery to Campus | Bundled by grade and section; delivered before academic year start. |
+| **Student Curriculum Workbook** | Curriculum Materials | Digital / Printable Access | Graded vocabulary, situational dialogues, comic strips, and QR-synced drills. |
+| **Institutional Setup & Onboarding** | Service Delivery | Campus & Teacher Activation | Academic onboarding, teacher orientation, and curriculum materials setup. |
 | **Teacher Guide Kit** | Institutional Setup | 1 per teacher included free | Hardcover spiral companion guide + access to digital lesson slides. |
 | **Cloud AI Speech Engine** | SaaS Operating Cost | Per Student per Year | Compute and speech-to-text / LLM evaluation tokens. |
 | **Live Trainer Classes** | Service Delivery | Billed per session or pooled | Certified trainers assigned based on scheduled institutional calendar. |
-| **Classroom Mode App** | Software License | Included in Annual Fee | Runs on Android TV, Windows, Mac, or browser on projectors/smartboards. |
+| **Classroom Activity Kit** | Teacher Resource | Included in Annual Fee | Scripted speaking blueprints, paired roleplays, debate relays, and rubric scorecards. |
