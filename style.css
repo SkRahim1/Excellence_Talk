@@ -223,6 +223,96 @@ a {
   pointer-events: none;
 }
 
+/* Top Information Bar */
+.top-bar {
+  background: linear-gradient(135deg, #07133B 0%, #0A1D56 100%);
+  color: #E2E8F0;
+  font-size: 0.82rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  z-index: 1002;
+}
+
+.top-bar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #CBD5E1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.top-bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.top-bar-link:hover {
+  color: #38BDF8;
+}
+
+.top-bar-whatsapp-pill {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  padding: 3px 11px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.top-bar-whatsapp-pill:hover {
+  background: rgba(16, 185, 129, 0.35);
+  color: #A7F3D0;
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    padding: 6px 0;
+    font-size: 0.76rem;
+  }
+  .top-bar-container {
+    padding: 0 14px;
+    gap: 8px;
+  }
+  .top-bar-left,
+  .top-bar-right {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-bar-container {
+    font-size: 0.72rem;
+  }
+  .top-bar-whatsapp-pill {
+    padding: 2px 8px;
+  }
+}
+
 /* Navbar */
 .navbar {
   position: sticky;
@@ -359,15 +449,16 @@ a {
   right: -340px;
   width: 320px;
   max-width: 86vw;
-  height: 100vh;
+  height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
   background: var(--white);
   box-shadow: -10px 0 25px rgba(10, 29, 86, 0.2);
   z-index: 2500;
   display: flex;
   flex-direction: column;
   transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 .mobile-menu-drawer.open {
@@ -378,12 +469,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 20px;
+  padding: 16px 20px;
   border-bottom: 1px solid var(--slate-200);
+  background: var(--white);
+  flex-shrink: 0;
 }
 
 .mobile-drawer-logo {
-  height: 38px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
@@ -401,27 +494,39 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease;
 }
 
 .mobile-drawer-close:hover {
   background: var(--slate-200);
 }
 
+.mobile-drawer-top-cta {
+  padding: 12px 18px 4px 18px;
+  flex-shrink: 0;
+  background: var(--white);
+}
+
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
-  flex-grow: 1;
+  padding: 10px 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 
 .mobile-nav-links a {
-  padding: 13px 22px;
-  font-size: 0.95rem;
+  padding: 12px 20px;
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--slate-800);
   display: block;
   border-bottom: 1px solid var(--slate-100);
   transition: background 0.2s, color 0.2s;
+  text-decoration: none;
 }
 
 .mobile-nav-links a:hover,
@@ -431,12 +536,14 @@ a {
 }
 
 .mobile-drawer-actions {
-  padding: 18px 20px;
+  padding: 14px 18px;
   border-top: 1px solid var(--slate-200);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: var(--slate-50);
+  background: var(--white);
+  flex-shrink: 0;
+  box-shadow: 0 -4px 16px rgba(10, 29, 86, 0.08);
 }
 
 .mobile-menu-backdrop {
@@ -448,11 +555,22 @@ a {
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+  touch-action: none;
 }
 
 .mobile-menu-backdrop.open {
   display: block;
   opacity: 1;
+}
+
+body.menu-drawer-active {
+  overflow: hidden;
+  touch-action: none;
+}
+
+body.menu-drawer-active .mobile-menu-drawer,
+body.menu-drawer-active .mobile-nav-links {
+  touch-action: pan-y;
 }
 
 /* Hero Section */
@@ -3510,13 +3628,22 @@ a {
     padding: 0 14px;
   }
 
-  .nav-actions .btn {
+  .nav-actions .nav-btn-sample {
     display: none;
   }
 
+  .nav-actions .nav-btn-demo {
+    display: inline-flex !important;
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    letter-spacing: -0.01em;
+  }
+
   .nav-logo-img {
-    height: 36px;
-    max-width: 175px;
+    height: 32px;
+    max-width: 140px;
   }
 
   .hero-title {

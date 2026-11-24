@@ -375,92 +375,92 @@ function openModal(type) {
   if (type === 'sample-chapter') {
     content.innerHTML = `
       <div class="section-tag">Sample Chapter Download</div>
-      <h3 style="margin-bottom:8px; font-size:1.6rem;">Get the Grade 5 Evaluation Kit</h3>
+      <h3 style="margin-bottom:8px; font-size:1.6rem; color:#0A1D56;">Get the Grade 5 Evaluation Kit</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
         Includes: (1) Chapter 4 Curriculum Workbook PDF, (2) Teacher's Companion Lesson Plan, and (3) Live QR link to test the AI Speaking scenario.
       </p>
-      <form onsubmit="submitLeadForm(event)">
+      <form onsubmit="submitLeadForm(event, 'sample-chapter')">
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" class="form-control" placeholder="Principal / Educator Name" required>
+          <input type="text" name="name" class="form-control" placeholder="Principal / Educator Name" required>
         </div>
         <div class="form-group">
           <label>Institutional Email</label>
-          <input type="email" class="form-control" placeholder="name@school.edu" required>
+          <input type="email" name="email" class="form-control" placeholder="name@school.edu" required>
         </div>
         <div class="form-group">
           <label>School / College Name</label>
-          <input type="text" class="form-control" placeholder="Greenwood International School" required>
+          <input type="text" name="school" class="form-control" placeholder="Greenwood International School" required>
         </div>
         <div class="form-group">
           <label>Estimated Student Count</label>
-          <select class="form-control">
-            <option>100 - 300 students</option>
-            <option>300 - 800 students</option>
-            <option>800 - 2,000 students</option>
-            <option>2,000+ students</option>
+          <select name="students" class="form-control">
+            <option value="100 - 300 students">100 - 300 students</option>
+            <option value="300 - 800 students">300 - 800 students</option>
+            <option value="800 - 2,000 students">800 - 2,000 students</option>
+            <option value="2,000+ students">2,000+ students</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Download Sample Kit Instantly</button>
+        <button type="submit" class="btn btn-primary btn-block">Download Sample Kit &amp; Send to WhatsApp</button>
       </form>
     `;
   } else if (type === 'book-demo') {
     content.innerHTML = `
       <div class="section-tag">Institutional Demonstration</div>
-      <h3 style="margin-bottom:8px; font-size:1.6rem;">Schedule a 30-Minute Walkthrough</h3>
+      <h3 style="margin-bottom:8px; font-size:1.6rem; color:#0A1D56;">Schedule a 30-Minute Walkthrough</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
         See how curriculum workbooks, classroom speaking drills, AI speech evaluation, and weekly live online teacher training operate together in your classrooms.
       </p>
-      <form onsubmit="submitLeadForm(event)">
+      <form onsubmit="submitLeadForm(event, 'book-demo')">
         <div class="form-group">
-          <label>Your Name & Title</label>
-          <input type="text" class="form-control" placeholder="Dr. Sarah Johnson, Principal" required>
+          <label>Your Name &amp; Title</label>
+          <input type="text" name="name" class="form-control" placeholder="Dr. Sarah Johnson, Principal" required>
         </div>
         <div class="form-group">
           <label>Phone / WhatsApp Number</label>
-          <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+          <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" required>
         </div>
         <div class="form-group">
           <label>Institution Location / City</label>
-          <input type="text" class="form-control" placeholder="Bengaluru, Karnataka" required>
+          <input type="text" name="city" class="form-control" placeholder="Hyderabad, Telangana" required>
         </div>
         <div class="form-group">
           <label>Curriculum Board</label>
-          <select class="form-control">
-            <option>CBSE</option>
-            <option>ICSE</option>
-            <option>State Board</option>
-            <option>Cambridge / IB</option>
-            <option>Higher Ed / University</option>
+          <select name="board" class="form-control">
+            <option value="CBSE">CBSE</option>
+            <option value="ICSE">ICSE</option>
+            <option value="State Board">State Board</option>
+            <option value="Cambridge / IB">Cambridge / IB</option>
+            <option value="Higher Ed / University">Higher Ed / University</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Confirm Demo Appointment</button>
+        <button type="submit" class="btn btn-primary btn-block">Confirm Demo Appointment via WhatsApp</button>
       </form>
     `;
   } else {
     content.innerHTML = `
       <div class="section-tag">Institutional Proposal</div>
-      <h3 style="margin-bottom:8px; font-size:1.6rem;">Customized School / College Quotation</h3>
+      <h3 style="margin-bottom:8px; font-size:1.6rem; color:#0A1D56;">Customized School / College Quotation</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
-        We tailor book printing, logistics, teacher guides, and trainer schedules to your academic calendar.
+        We tailor book printing, logistics, teacher guides, and weekly teacher training schedules to your academic calendar.
       </p>
-      <form onsubmit="submitLeadForm(event)">
+      <form onsubmit="submitLeadForm(event, 'proposal')">
         <div class="form-group">
           <label>Institution Name</label>
-          <input type="text" class="form-control" placeholder="ABC Group of Institutions" required>
+          <input type="text" name="school" class="form-control" placeholder="ABC Group of Institutions" required>
         </div>
         <div class="form-group">
-          <label>Contact Email & Mobile</label>
-          <input type="text" class="form-control" placeholder="director@abc.edu | +91 9876543210" required>
+          <label>Contact Email &amp; Mobile</label>
+          <input type="text" name="contact" class="form-control" placeholder="director@abc.edu | +91 9876543210" required>
         </div>
         <div class="form-group">
           <label>Preferred Licensing Model</label>
-          <select class="form-control">
-            <option>Model A: All-Inclusive Blended Package</option>
-            <option>Model B: Platform Base + Book Pass-Through</option>
+          <select name="model" class="form-control">
+            <option value="Model A: All-Inclusive Blended Package (₹549/student/year)">Model A: All-Inclusive Blended Package (₹549/student/year)</option>
+            <option value="Model B: Platform Base + Book Pass-Through">Model B: Platform Base + Book Pass-Through</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Generate Custom Quotation</button>
+        <button type="submit" class="btn btn-primary btn-block">Generate Quotation &amp; Send to WhatsApp</button>
       </form>
     `;
   }
@@ -473,19 +473,67 @@ function closeModal(e) {
   if (backdrop) backdrop.classList.remove('open');
 }
 
-function submitLeadForm(e) {
+function submitLeadForm(e, formType) {
   e.preventDefault();
+  const form = e.target;
   const content = document.getElementById('modal-inner-content');
   if (!content) return;
 
+  const phoneOwner = '918975190928';
+  let message = '';
+  let headline = 'Thank You!';
+  let subtext = 'Connecting to WhatsApp...';
+
+  if (formType === 'book-demo') {
+    const name = form.elements['name'] ? form.elements['name'].value.trim() : 'Educator';
+    const phone = form.elements['phone'] ? form.elements['phone'].value.trim() : '';
+    const city = form.elements['city'] ? form.elements['city'].value.trim() : 'Hyderabad';
+    const board = form.elements['board'] ? form.elements['board'].value : 'CBSE';
+
+    headline = 'Demo Request Registered!';
+    subtext = 'Forwarding your demo walkthrough booking directly to Rahim Shaikh on WhatsApp.';
+    message = `Hello Rahim Sir,\n\nI would like to book a 30-minute institutional demo for Excellence Talk:\n• Name & Title: ${name}\n• Phone / WhatsApp: ${phone}\n• Institution & Location: ${city}\n• Curriculum Board: ${board}\n• Requested Plan: All-Inclusive School Program (₹549 / student / year)\n\nPlease share the available demo schedule.`;
+  } else if (formType === 'sample-chapter') {
+    const name = form.elements['name'] ? form.elements['name'].value.trim() : 'Educator';
+    const email = form.elements['email'] ? form.elements['email'].value.trim() : '';
+    const school = form.elements['school'] ? form.elements['school'].value.trim() : '';
+    const students = form.elements['students'] ? form.elements['students'].value : '';
+
+    headline = 'Sample Kit Request Sent!';
+    subtext = 'Connecting with Rahim Shaikh on WhatsApp to receive the sample curriculum workbook & teacher guide.';
+    message = `Hello Rahim Sir,\n\nI would like to request the Grade 5 Evaluation Kit & Sample Curriculum Workbook PDF:\n• Name: ${name}\n• Email: ${email}\n• Institution: ${school}\n• Student Count: ${students}\n\nPlease share the sample materials.`;
+  } else {
+    const school = form.elements['school'] ? form.elements['school'].value.trim() : '';
+    const contact = form.elements['contact'] ? form.elements['contact'].value.trim() : '';
+    const model = form.elements['model'] ? form.elements['model'].value : 'Model A (₹549)';
+
+    headline = 'Quotation Request Sent!';
+    subtext = 'Connecting with Rahim Shaikh on WhatsApp to generate your custom institutional quotation.';
+    message = `Hello Rahim Sir,\n\nI would like to request an institutional proposal for Excellence Talk:\n• Institution: ${school}\n• Contact Info: ${contact}\n• Selected Model: ${model}\n\nPlease share the proposal and pricing details.`;
+  }
+
+  const waUrl = `https://wa.me/${phoneOwner}?text=${encodeURIComponent(message)}`;
+
+  try {
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  } catch (err) {
+    console.error('Window open blocked', err);
+  }
+
   content.innerHTML = `
-    <div style="text-align:center; padding:30px 10px;">
-      <div style="width:60px; height:60px; background:#DEF7EC; color:#0E9F6E; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 16px auto;">✓</div>
-      <h3 style="font-size:1.6rem; margin-bottom:10px;">Thank You!</h3>
-      <p style="color:#4B5563; font-size:0.98rem; margin-bottom:24px;">
-        Your request has been registered. An Excellence Talk academic consultant will connect with sample materials within 2 hours.
+    <div style="text-align:center; padding:24px 10px;">
+      <div style="width:64px; height:64px; background:#DEF7EC; color:#0E9F6E; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2.2rem; margin:0 auto 16px auto; box-shadow:0 8px 18px rgba(14, 159, 110, 0.2);">✓</div>
+      <h3 style="font-size:1.55rem; color:#0A1D56; margin-bottom:8px;">${headline}</h3>
+      <p style="color:#4B5563; font-size:0.95rem; margin-bottom:20px; line-height:1.5;">
+        ${subtext}
       </p>
-      <button class="btn btn-primary" onclick="closeModal()">Close Window</button>
+      <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:13px 20px; font-weight:700; font-size:1rem; border-radius:10px; margin-bottom:12px; text-decoration:none;">
+        <span style="font-size:1.25rem;">💬</span> Open WhatsApp to Confirm
+      </a>
+      <p style="font-size:0.8rem; color:#64748B; margin-bottom:16px;">
+        Direct Desk: <strong>+91 89751 90928</strong> (Rahim Shaikh, Founder &amp; Lead Educator • Hyderabad, India)
+      </p>
+      <button class="btn btn-outline btn-block" onclick="closeModal()">Close Window</button>
     </div>
   `;
 }
@@ -493,21 +541,31 @@ function submitLeadForm(e) {
 // Mobile Menu Toggle
 function toggleMobileMenu() {
   const drawer = document.getElementById('mobile-menu-drawer');
-  const backdrop = document.getElementById('mobile-menu-backdrop');
+  let backdrop = document.getElementById('mobile-menu-backdrop');
   const btn = document.getElementById('mobile-menu-btn');
   
-  if (!drawer || !backdrop) return;
+  if (!drawer) return;
+
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'mobile-menu-backdrop';
+    backdrop.id = 'mobile-menu-backdrop';
+    backdrop.setAttribute('onclick', 'toggleMobileMenu()');
+    document.body.appendChild(backdrop);
+  }
   
   const isOpen = drawer.classList.contains('open');
   if (isOpen) {
     drawer.classList.remove('open');
     backdrop.classList.remove('open');
     if (btn) btn.classList.remove('active');
+    document.body.classList.remove('menu-drawer-active');
     document.body.style.overflow = '';
   } else {
     drawer.classList.add('open');
     backdrop.classList.add('open');
     if (btn) btn.classList.add('active');
+    document.body.classList.add('menu-drawer-active');
     document.body.style.overflow = 'hidden';
   }
 }

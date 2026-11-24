@@ -86,6 +86,23 @@
 </head>
 <body>
 
+  <!-- Top Information Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="top-bar-left">
+        <span class="top-bar-item"><span class="top-bar-icon">📍</span> Hyderabad, India</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:8975190928" class="top-bar-link" title="Call directly on +91 89751 90928">
+          <span class="top-bar-icon">📞</span> +91 89751 90928
+        </a>
+        <a href="https://wa.me/918975190928?text=Hello%20Rahim%20sir%2C%20I%20would%20like%20to%20connect%20regarding%20Excellence%20Talk." target="_blank" rel="noopener noreferrer" class="top-bar-link top-bar-whatsapp-pill" title="Chat on WhatsApp">
+          <span class="top-bar-icon">💬</span> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -123,6 +140,12 @@
       <img src="assets/logo.png" alt="Excellence Talk" class="mobile-drawer-logo">
       <button class="mobile-drawer-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
     </div>
+    <!-- Top Instant Action for Mobile -->
+    <div class="mobile-drawer-top-cta">
+      <button class="btn btn-primary btn-block" onclick="toggleMobileMenu(); openModal('book-demo')">
+        📅 Book a Demo (Talk to Rahim)
+      </button>
+    </div>
     <div class="mobile-nav-links">
       <a href="students/index.html" style="background:#EBF5FF; color:#0084FF; font-weight:800; border-radius:8px; padding:10px 14px; margin-bottom:8px; display:flex; align-items:center; gap:8px;">🎓 Student Learning Portal (Enter Here)</a>
       <a href="spoken-english-for-schools.html">🏫 Spoken English for Schools</a>
@@ -134,8 +157,13 @@
       <a href="institutional-partnerships.html">🤝 Institutional Partnerships</a>
       <a href="articles.html">📖 Educational Guides & Articles</a>
       <a href="index.html#faq" onclick="toggleMobileMenu()">❓ Frequently Asked Questions</a>
+        </div>
+    <div class="mobile-drawer-actions">
+      <button class="btn btn-primary btn-block" onclick="toggleMobileMenu(); openModal('book-demo')">Schedule Institutional Demo</button>
+      <button class="btn btn-outline btn-block" onclick="toggleMobileMenu(); openModal('sample-chapter')">Download Sample Workbook PDF</button>
     </div>
   </div>
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
 
   <header class="page-hero">
     <div class="container">
