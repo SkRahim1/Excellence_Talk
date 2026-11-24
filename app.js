@@ -100,22 +100,22 @@ const loopStepsData = {
     `
   },
   5: {
-    title: "Step 5: Apply (Live Trainer & Group Discussion)",
-    action: "High-Touch Human Pressure Testing",
-    desc: "Having mastered the words, sentences, and AI drills, students participate in scheduled live sessions with certified trainers. They engage in extempore presentations, debates, and group problem-solving.",
+    title: "Step 5: Apply (Classroom Showcase & Group Discussion)",
+    action: "Teacher-Led Real-World Application",
+    desc: "Having mastered the words, sentences, and AI drills, students take the floor in class. Their English teacher, trained every week by our certified trainers, runs storytelling rounds, classroom debates and group discussions using ready-made activity plans.",
     features: [
-      "Small cohort size ensures every single student gets speaking stage time",
-      "Certified master trainers provide nuanced vocal coaching and confidence building",
-      "Real-world communication formats: Mini-debates, news reading, GDs",
+      "Every student gets speaking stage time in a familiar, encouraging classroom environment",
+      "English teachers receive weekly live online training to lead engaging speaking sessions",
+      "Ready-to-run activity plans for storytelling, debates, elocution and group discussions",
       "Direct milestone assessment evaluated on global CEFR benchmarks"
     ],
     previewHtml: `
       <div class="loop-visual-preview">
-        <span class="preview-badge">Live Masterclass</span>
-        <h4 style="color:#7C3AED; margin-bottom:8px;">🎙️ Small Group Speaking Stage</h4>
-        <p style="font-size:0.85rem; color:#4B5563; margin-bottom:8px;">Trainer: <em>"Aarav, present your speech on 'Why Time Management is a Superpower' (60s)."</em></p>
+        <span class="preview-badge">Classroom Showcase</span>
+        <h4 style="color:#7C3AED; margin-bottom:8px;">🎙️ Classroom Speaking Stage</h4>
+        <p style="font-size:0.85rem; color:#4B5563; margin-bottom:8px;">Teacher: <em>"Aarav, present your speech on 'Why Time Management is a Superpower' (60s)."</em></p>
         <div style="background:#F5F3FF; border:1px solid #DDD6FE; padding:10px; border-radius:6px; font-size:0.82rem; color:#5B21B6;">
-          <strong>Trainer Live Rubric:</strong><br>
+          <strong>Classroom Showcase Rubric:</strong><br>
           • Eye contact & poise: 9/10<br>
           • Articulation & pace: 8.5/10<br>
           • Persuasive vocabulary used: 9/10
@@ -126,7 +126,7 @@ const loopStepsData = {
   6: {
     title: "Step 6: Track Progress (Analytics & Mastery Badge)",
     action: "Verified Skill Growth & Credentialing",
-    desc: "The platform consolidates book completion, classroom activity participation, AI speech diagnostics, and trainer scores into a transparent growth report for teachers, parents, and school leadership.",
+    desc: "The platform consolidates book completion, classroom activity participation, AI speech diagnostics, and teacher showcase scores into a transparent growth report for teachers, parents, and school leadership.",
     features: [
       "School leadership portal tracking grade-wise and section-wise fluency metrics",
       "Parent WhatsApp / SMS weekly progress summary card",
@@ -141,7 +141,7 @@ const loopStepsData = {
           <div style="background:#F9FAFB; padding:8px; border-radius:4px;">Book Exercises: <strong>100%</strong></div>
           <div style="background:#F9FAFB; padding:8px; border-radius:4px;">Class Games: <strong>Participated</strong></div>
           <div style="background:#F9FAFB; padding:8px; border-radius:4px;">AI Speaking Score: <strong>92/100</strong></div>
-          <div style="background:#F9FAFB; padding:8px; border-radius:4px;">Live Trainer Score: <strong>8.8/10</strong></div>
+          <div style="background:#F9FAFB; padding:8px; border-radius:4px;">Showcase Score: <strong>8.8/10</strong></div>
         </div>
         <div style="color:#10B981; font-weight:bold; font-size:0.82rem;">✓ Chapter Badge: "Master of Routines" Unlocked</div>
       </div>
@@ -409,7 +409,7 @@ function openModal(type) {
       <div class="section-tag">Institutional Demonstration</div>
       <h3 style="margin-bottom:8px; font-size:1.6rem;">Schedule a 30-Minute Walkthrough</h3>
       <p style="font-size:0.92rem; color:#4B5563; margin-bottom:20px;">
-        See how curriculum workbooks, classroom speaking drills, AI speech evaluation, and live trainer masterclasses operate together in your classrooms.
+        See how curriculum workbooks, classroom speaking drills, AI speech evaluation, and weekly live online teacher training operate together in your classrooms.
       </p>
       <form onsubmit="submitLeadForm(event)">
         <div class="form-group">
